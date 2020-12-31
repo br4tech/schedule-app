@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "schedule-app"
+  "defaultProject": "schedule-app",
+  "cli": {
+    "analytics": "20046a3a-f207-4903-82cf-7266bc29cea9"
+  }
 }
