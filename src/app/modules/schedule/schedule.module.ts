@@ -1,31 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-/* Pages */
-import { ScheduleDailyComponent } from './pages/schedule-daily/schedule-daily.component';
-import { ScheduleWeeklyComponent } from './pages/schedule-weekly/schedule-weekly.component';
-import { ScheduleMonthlyComponent } from './pages/schedule-monthly/schedule-monthly.component';
+import { ScheduleRoutingModule } from './schedule-routing.module';
 
-/*Components */
-import { DailyComponent } from './components/daily/daily.component';
-import { WeeklyComponent } from './components/weekly/weekly.component';
-import { MonthlyComponent } from './components/monthly/monthly.component';
-import { ReservationComponent } from './components/reservation/reservation.component';
-import { ModalReservationComponent } from './components/modal-reservation/modal-reservation.component';
+import { ContractScheduleComponent } from './components/contract-schedule/contract-schedule.component'
 
 @NgModule({
-  declarations: [
-    ScheduleDailyComponent,
-    ScheduleWeeklyComponent,
-    ScheduleMonthlyComponent,
-    ModalReservationComponent,
-    DailyComponent,
-    WeeklyComponent,
-    MonthlyComponent,
-    ReservationComponent,
-  ],
   imports: [
-    CommonModule
+    CommonModule,
+    ScheduleRoutingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
+  ],
+  declarations: [
+    ContractScheduleComponent
   ]
 })
 export class ScheduleModule { }
