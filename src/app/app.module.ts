@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt-PT';
 
+import { ScheduleModule } from './modules/schedule/schedule.module';
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -15,9 +17,11 @@ registerLocaleData(localePt);
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScheduleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
