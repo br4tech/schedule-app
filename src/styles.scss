@@ -1,3 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+// ASSETS
+@import "./assets/grid.scss";
+@import "./assets/fonts.scss";
+@import "./assets/text.scss";
+@import "./assets/borders.scss";
+@import "./assets/btn.scss";
+@import "./assets/spaces.scss";
+@import "./assets/alerts.scss";
+@import "./assets//dropdown.scss";
+@import "./assets/list.scss";
+@import "./assets/card.scss";
+
+@import "./assets/media-query.scss";
+@import "./assets/media-query-grid.scss";
+@import "./assets/sv-icon-medica-query.scss";
+@import "./assets/spaces-media-query.scss";
+@import "./assets/aside-media-query.scss";
+
+@import "./assets/aside.scss";
+@import "./assets/navbar.scss";
+@import "./assets/subheader.scss";
+
+body {
+  background: #f3f6f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #3f4254;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 13px!important;
+  font-weight: 400;
+  font-family: Poppins,Helvetica,sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.d-flex {
+	display: -webkit-box!important;
+	display: -ms-flexbox!important;
+	display: flex!important
+}
+
+.flex-row{
+  -webkit-box-orient: horizontal!important;
+  -webkit-box-direction: normal!important;
+  -ms-flex-direction: row!important;
+  flex-direction: row!important;
+}
+
+.flex-row-auto {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto
+}
+
+.flex-row-fluid {
+	-webkit-box-flex: 1;
+	flex: 1 auto;
+	-ms-flex: 1 0 0px;
+	min-width: 0
+}
+
+.flex-column {
+	-webkit-box-orient: vertical!important;
+	-webkit-box-direction: normal!important;
+	-ms-flex-direction: column!important;
+	flex-direction: column!important
+}
+
+.flex-column-fluid {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto
+}
+
+.flex-wrap {
+	-ms-flex-wrap: wrap!important;
+	flex-wrap: wrap!important
+}
+
+.flex-sm-nowrap {
+  -ms-flex-wrap: nowrap!important;
+  flex-wrap: nowrap!important
+}
+
+.align-items-center {
+	-webkit-box-align: center!important;
+	-ms-flex-align: center!important;
+	align-items: center!important
+}
+
+.align-items-baseline {
+	-webkit-box-align: baseline!important;
+	-ms-flex-align: baseline!important;
+	align-items: baseline!important
+}
+
+.text-dark {
+	color: #181c32!important
+}
+
+
+.tab-content>.tab-pane {
+	display: none
+}
+
+.tab-content>.active {
+	display: block
+}
+
+.justify-content-between {
+	-webkit-box-pack: justify!important;
+	-ms-flex-pack: justify!important;
+	justify-content: space-between!important
+}
