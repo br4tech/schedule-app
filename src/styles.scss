@@ -3,16 +3,45 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 // ASSETS
+@import "./assets/default.scss";
 @import "./assets/grid.scss";
+@import "./assets/table.scss";
+@import "./assets/form.scss";
+@import "./assets/btn.scss";
+@import "./assets/input-groups.scss";
+@import "./assets/custom-fields.scss";
+@import "./assets/navbar.scss";
+@import "./assets/card.scss";
+@import "./assets/accordion.scss";
+@import "./assets/breadcrumb.scss";
+@import "./assets/pagination.scss";
+@import "./assets/badge.scss";
+@import "./assets/alerts.scss";
+@import "./assets/list-group.scss";
+@import "./assets/tooltip.scss";
+@import "./assets/popover.scss";
+@import "./assets/datatable.scss";
+@import "./assets/checkbox.scss";
+@import "./assets/radio.scss";
+@import "./assets/switch.scss";
+@import "./assets/option.scss";
+@import "./assets/dialog.scss";
+@import "./assets/separator.scss";
+@import "./assets/image.scss";
+@import "./assets/label.scss";
+@import "./assets/loader.scss";
+@import "./assets/symbol.scss";
+@import "./assets/sv-icon.scss";
+@import "./assets/list.scss";
+@import "./assets/datepicker.scss";
+
 @import "./assets/fonts.scss";
 @import "./assets/text.scss";
 @import "./assets/borders.scss";
-@import "./assets/btn.scss";
 @import "./assets/spaces.scss";
 @import "./assets/alerts.scss";
 @import "./assets//dropdown.scss";
-@import "./assets/list.scss";
-@import "./assets/card.scss";
+
 
 @import "./assets/media-query.scss";
 @import "./assets/media-query-grid.scss";
@@ -21,7 +50,6 @@
 @import "./assets/aside-media-query.scss";
 
 @import "./assets/aside.scss";
-@import "./assets/navbar.scss";
 @import "./assets/subheader.scss";
 
 body {

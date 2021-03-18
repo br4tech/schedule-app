@@ -6,11 +6,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './schedule.routes';
 
-import { LayoutComponent } from '../../shared/layout/layout.component';
-import { AsideComponent } from '../../shared/layout/aside/aside.component';
-import { SubheaderComponent } from '../../shared/layout/subheader/subheader.component';
-
-import { ContractScheduleComponent } from './components/contract-schedule/contract-schedule.component';
+import { ContractScheduleComponent } from './contract-schedule/contract-schedule.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,9 +17,6 @@ import { ContractScheduleComponent } from './components/contract-schedule/contra
     })
   ],
   declarations: [
-    LayoutComponent,
-    AsideComponent,
-    SubheaderComponent,
     ContractScheduleComponent
   ],
   schemas: [
