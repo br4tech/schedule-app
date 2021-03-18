@@ -2,7 +2,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
-import { isSameDay, isSameMonth, startOfDay } from 'date-fns';
+import { endOfMonth, endOfWeek, isSameDay, isSameMonth, startOfDay } from 'date-fns';
 import { Subject } from 'rxjs';
 @Component({
   selector: 'app-contract-schedule',
@@ -47,6 +47,7 @@ export class ContractScheduleComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       start: startOfDay(new Date()),
+      end: endOfWeek(new Date()),
       title: 'First event',
     },
     {
