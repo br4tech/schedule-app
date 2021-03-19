@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './contract.routes';
 
 import { ContractListComponent } from './contract-list/contract-list.component';
+import { ContractEditComponent } from './contract-edit/contract-edit.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import { ContractListComponent } from './contract-list/contract-list.component';
     })
   ],
   declarations: [
-    ContractListComponent
+    ContractListComponent,
+    ContractEditComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
