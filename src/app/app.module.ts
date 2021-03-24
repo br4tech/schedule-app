@@ -9,6 +9,7 @@ import localePt from '@angular/common/locales/pt-PT';
 import { ScheduleModule } from './modules/schedule/schedule.module';
 import { ContractModule  } from './modules/contract/contract.module';
 import { FinancialModule } from './modules/financial/financial.module';
+import { ReportModule } from './modules/report/reporte.module';
 
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
@@ -29,7 +30,8 @@ registerLocaleData(localePt);
     AppRoutingModule,
     ScheduleModule,
     ContractModule,
-    FinancialModule
+    FinancialModule,
+    ReportModule
   ],
   providers: [],
   bootstrap: [AppComponent],
