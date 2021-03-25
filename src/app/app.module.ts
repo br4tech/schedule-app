@@ -11,6 +11,7 @@ import { ContractModule  } from './modules/contract/contract.module';
 import { FinancialModule } from './modules/financial/financial.module';
 import { ReportModule } from './modules/report/reporte.module';
 import { UserModule } from './modules/user/user.module';
+import { DoctorModule } from './modules/doctor/doctor.module';
 
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
@@ -33,7 +34,8 @@ registerLocaleData(localePt);
     ContractModule,
     FinancialModule,
     ReportModule,
-    UserModule
+    UserModule,
+    DoctorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
