@@ -8,6 +8,8 @@ import { ROUTES } from './contract.routes';
 
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { ContractEditComponent } from './contract-edit/contract-edit.component';
+
+import { FilterUniquePipe } from '../../shared/pipes/filter-unique.pipe';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { ContractEditComponent } from './contract-edit/contract-edit.component';
   ],
   declarations: [
     ContractListComponent,
-    ContractEditComponent
+    ContractEditComponent,
+    FilterUniquePipe
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

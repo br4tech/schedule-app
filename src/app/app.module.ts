@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt-PT';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ScheduleModule } from './modules/schedule/schedule.module';
 import { ContractModule  } from './modules/contract/contract.module';
@@ -30,6 +31,7 @@ registerLocaleData(localePt);
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ScheduleModule,
     ContractModule,
     FinancialModule,
