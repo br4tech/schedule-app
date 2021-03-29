@@ -9,6 +9,7 @@ import { ROUTES } from './financial.routes';
 import { FinancialListComponent } from './financial-list/financial-list.component';
 import { FinancialFilterComponent } from './components/financial-filter/financial-filter.component';
 import { FinancialGridComponent } from './components/financial-grid/financial-grid.component';
+import { FinancialResolverService } from './financial-resolver.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +26,9 @@ import { FinancialGridComponent } from './components/financial-grid/financial-gr
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
+  ],
+  providers:[
+    FinancialResolverService
   ]
 })
 

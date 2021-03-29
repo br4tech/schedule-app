@@ -16,14 +16,22 @@
     </div>
   </div>
   <div class="card-body">
-    <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded"
-      id="kt_datatable" style="">
+    <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-subtable
+      datatable-loaded">
       <table class="datatable-table" style="display: block;">
         <thead class="datatable-head">
           <tr class="datatable-row" style="left: 0px;">
-            <th class="datatable-cell-center datatable-cell datatable-cell-check"><span style="width: 20px;"><label
-                  class="checkbox checkbox-single checkbox-all"><input
-                    type="checkbox">&nbsp;<span></span></label></span></th>
+            <th class="datatable-cell datatable-cell-sort">
+              <span style="width: 30px;"></span>
+            </th>
+            <th class="datatable-cell-center datatable-cell datatable-cell-check">
+              <span style="width: 20px;">
+                <label class="checkbox checkbox-single checkbox-all">
+                  <input type="checkbox">&nbsp;
+                  <span></span>
+                </label>
+              </span>
+            </th>
             <th class="datatable-cell datatable-cell-sort">
               <span style="width: 129px;">Código</span>
             </th>
@@ -43,57 +51,119 @@
               <span style="width: 129px;">Tipo</span>
             </th>
             <th class="datatable-cell datatable-cell-sort">
-              <span style="width: 125px;">Actions</span>
+              <span style="width: 125px;"></span>
             </th>
           </tr>
         </thead>
-        <tbody class="datatable-body" style="">
-          <tr data-row="0" class="datatable-row" style="left: 0px;">
-            <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1">
-              <span style="width: 20px;">
-                <label class="checkbox checkbox-single">
-                  <input type="checkbox" value="1">&nbsp;
-                  <span></span>
-                </label>
-              </span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">0374-5070</span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">Bitencourt Medicina Integranda</span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">20/02/2021</span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">R$ 1000,00</span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">
-                <span class="label font-weight-bold label-lg  label-light-danger label-inline">Aberto</span>
-              </span>
-            </td>
-            <td class="datatable-cell">
-              <span style="width: 129px;">
-                <span class="label label-primary label-dot mr-2"></span>
-                <span class="font-weight-bold text-primary">Density</span>
-              </span>
-            </td>
-            <td class="datatable-cell">
-              <span style="overflow: visible; position: relative; width: 125px;">
-                <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2">
-                  <i class="fa fa-refresh fa-1x"></i>
+        <tbody class="datatable-body">
+          <div *ngFor="let payroll of payrolls">
+            <tr class="datatable-row datatable-row datatable-row-even datatable-row-subtable-expanded">
+              <td class="datatable-cell-center datatable-cell">
+                <a class="datatable-toggle-subtable" (click)="toggleShow(payroll.id)" style="width: 30px;">
+                  <i style="width: 30px;" class="fa fa-caret-down" *ngIf="isShown"></i>
+                  <i style="width: 30px;" class="fa fa-caret-right" *ngIf="!isShown"></i>
                 </a>
-                <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2">
-                  <i class="fa fa-print"></i>
-                </a>
-                <a href="javascript:;" class="btn btn-sm btn-clean btn-icon">
-                  <i class="fa fa-file-o"></i>
-                </a>
-              </span>
-            </td>
-          </tr>
+              </td>
+              <td class="datatable-cell-center datatable-cell datatable-cell-check">
+                <span style="width: 20px;">
+                  <label class="checkbox checkbox-single">
+                    <input type="checkbox" value="1">&nbsp;
+                    <span></span>
+                  </label>
+                </span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">{{ payroll.id }}</span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">{{ payroll.contract_name}}</span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">{{ payroll.due_at | date:"dd/MM/yyyy"}}</span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">{{ payroll.amount | currency : 'R$'}}</span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">
+                  <span class="label font-weight-bold label-lg  label-light-danger label-inline">Aberto</span>
+                </span>
+              </td>
+              <td class="datatable-cell">
+                <span style="width: 129px;">
+                  <span class="label label-primary label-dot mr-2"></span>
+                  <span class="font-weight-bold text-primary">Density</span>
+                </span>
+              </td>
+              <td class="datatable-cell">
+                <span style="overflow: visible; position: relative; width: 125px;">
+                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2">
+                    <i class="fa fa-refresh fa-1x"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2">
+                    <i class="fa fa-print"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon">
+                    <i class="fa fa-arrow-circle-o-down"></i>
+                  </a>
+                </span>
+              </td>
+            </tr>
+            <tr class="datatable-row-subtable" *ngIf="payroll.payroll_items.length > 0 && isShown">
+              <td class="datatable-subtable" colspan="9">
+                <div class="datatable datatable-default datatable-primary datatable-loaded">
+                  <table class="datatable-table">
+                    <thead class="datatable-head">
+                      <tr class="datatable-row text-center">
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Código</span>
+                        </th>
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Periodo</span>
+                        </th>
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Unidade</span>
+                        </th>
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Horas</span>
+                        </th>
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Tipo</span>
+                        </th>
+                        <th class="datatable-cell">
+                          <span style="width: 112px;">Valor</span>
+                        </th>
+                        <th class="datatable-cell"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="datatable-body">
+                      <tr *ngFor="let item of payroll.payroll_items" class="datatable-row text-center">
+                        <td class="datatable-cell">
+                          <span style="width: 112px;">{{ item.id }}</span>
+                        </td>
+                        <td class="datatable-cell">
+                          <span style="width: 112px;">{{ item.period | date:"dd/MM/yyyy" }}</span>
+                        </td>
+                        <td class="datatable-cell">
+                          <span style="width: 112px;">{{ item.clinic_id }}</span>
+                        </td>
+                        <td class="datatable-cell">
+                          <span style="width: 112px;">{{ item.hours }}</span>
+                        </td>
+                        <td class="datatable-cell">
+                          <span style="width: 112px;">{{ item.odd }}</span>
+                        </td>
+                        <td class="datatable-cell">
+                          <span style="width: 129px;">{{ item.amount | currency : 'R$' }}</span>
+                        </td>
+                        <td class="datatable-cell datatable-cell-sort"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </div>
         </tbody>
       </table>
       <div class="datatable-pager datatable-paging-loaded">

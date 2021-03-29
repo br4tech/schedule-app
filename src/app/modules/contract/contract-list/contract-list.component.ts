@@ -5,8 +5,7 @@ import { Contract } from '../../../shared/models/contract'
 
 @Component({
   selector: 'app-contract-list',
-  templateUrl: './contract-list.component.html',
-  styleUrls: ['./contract-list.component.scss']
+  templateUrl: './contract-list.component.html'
 })
 
 export class ContractListComponent implements OnInit {
