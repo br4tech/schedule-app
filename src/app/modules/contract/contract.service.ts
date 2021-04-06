@@ -8,6 +8,7 @@ import { Contract } from '../../shared/models/contract';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContractService {
 
   // injetando o HttpClient

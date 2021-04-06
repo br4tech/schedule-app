@@ -5,7 +5,7 @@ export interface Office {
   address: string;
   phone: string;
   phone_secondary: string;
-  status: 0,
+  status: boolean,
   opening_hours: string;
 }
 
