@@ -4,6 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
 import { endOfMonth, endOfWeek, isSameDay, isSameMonth, startOfDay } from 'date-fns';
 import { Subject } from 'rxjs';
+import { Reservation } from 'src/app/shared/models/reservation';
+import { ScheduleService } from '../schedule.service';
 @Component({
   selector: 'app-contract-schedule',
   templateUrl: './contract-schedule.component.html'
@@ -17,7 +19,9 @@ export class ContractScheduleComponent implements OnInit {
   CalendarView = CalendarView;
   activeDayIsOpen: boolean = true;
   locale: string = 'pt-PT';
-
+ 
+  reservation = {} as Reservation;
+  reservations: Reservation[] = [];
 
   modalData!: {
     action: string;
@@ -72,9 +76,10 @@ export class ContractScheduleComponent implements OnInit {
   }
 
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal, private scheduleService: ScheduleService) { }
 
   ngOnInit() {
+    this.getReservations()
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
@@ -102,5 +107,13 @@ export class ContractScheduleComponent implements OnInit {
 
   setView(view: CalendarView) {
     this.view = view;
+  }
+
+  
+  getReservations() {
+    this.scheduleService.getReservations().subscribe((data: any) => {    
+      debugger;  
+      this.reservation = data.reservations
+    });
   }
 }
