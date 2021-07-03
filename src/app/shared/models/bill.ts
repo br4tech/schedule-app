@@ -1,6 +1,6 @@
-import { PayrollItem } from "./payroll-item";
+import { BillItem } from "./bill-item";
 
-export class Payroll {
+export class Bill {
   id: number;
   contract_name: string;
   emission: string;
@@ -9,5 +9,5 @@ export class Payroll {
   status: boolean;
   revenues_at: string;
   amount: string;
-  payroll_items: PayrollItem[]
+  payroll_items: BillItem[]
 }

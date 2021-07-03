@@ -1,4 +1,4 @@
-export interface PayrollItem {
+export interface BillItem {
   id: number;
   period: string;
   clinic_id: number;

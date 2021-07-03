@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "stubs": "stubby -s 5000 -d stubbs/stubby.json -w",
+    "stubby": "concurrently \"npm start\" \"npm run stubs\""
   },
   "private": true,
   "dependencies": {
@@ -23,12 +25,14 @@
     "angular-calendar": "^0.28.22",
     "angularx-flatpickr": "^6.5.1",
     "bootstrap": "^4.6.0",
+    "concurrently": "^6.2.0",
     "date-fns": "^2.19.0",
     "flatpickr": "^4.6.9",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "rxjs": "^6.6.7",
     "rxjs-compat": "^6.6.7",
+    "stubby": "^5.1.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

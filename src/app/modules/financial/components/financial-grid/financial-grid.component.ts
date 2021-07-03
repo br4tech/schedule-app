@@ -11,7 +11,7 @@ declare var $: any;
 
 export class FinancialGridComponent implements OnInit {
 
-  @Input() payrolls: any[] = [];
+  @Input() bills: any[] = [];
   isShown: boolean = false;
   cell: number;
 
