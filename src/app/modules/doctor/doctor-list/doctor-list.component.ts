@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Client } from 'src/app/shared/models/client';
 import { DoctorService } from '../doctor.service';
 
@@ -9,18 +10,13 @@ import { DoctorService } from '../doctor.service';
 })
 export class DoctorListComponent implements OnInit {
 
-  clients: Client[] = [];
+  clients: any;
 
-  constructor(private doctorService: DoctorService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {    
-    this.getClients()
-  }
-
-  getClients() {
-    this.doctorService.getClients().subscribe((clients: any) => {  
-      debugger;    
-      this.clients = clients;
-    });
-  }
+    this.activatedRoute.data.subscribe((data) => {
+     this.clients = data.item.clients
+    })
+  } 
 }

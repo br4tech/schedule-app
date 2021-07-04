@@ -21,25 +21,25 @@
              </div>
              <div>
                <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
-                Brad Simmons
-                <span class="text-muted font-weight-bold d-block">Oftalmologista</span>
+                {{ client.name }}
+                <span class="text-muted font-weight-bold d-block">{{ client.document}}</span>
                </a>
              </div>
            </div>
          </td>
          <td>
            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-            (19) 9993-677272
+            {{ client.phone }}
            </span>
          </td>
          <td>
           <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-            brad.simons@permat.com.br
+            {{ client.email }}
            </span>
          </td>
          <td>
           <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-           Contrato 01
+            {{ client.kind_person }}
            </span>
          </td>
          <td class="pr-0 text-right">

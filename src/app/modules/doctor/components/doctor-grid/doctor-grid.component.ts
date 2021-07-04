@@ -12,6 +12,7 @@ export class DoctorGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    debugger;
   }
 
 }

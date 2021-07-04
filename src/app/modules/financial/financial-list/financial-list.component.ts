@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Bill } from 'src/app/shared/models/bill';
+
 @Component({
   selector: 'app-financial-list',
   templateUrl: './financial-list.component.html'
