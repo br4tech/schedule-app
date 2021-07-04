@@ -22,6 +22,7 @@ export class ContractScheduleComponent implements OnInit {
  
   reservation = {} as Reservation;
   reservations: Reservation[] = [];
+  events: CalendarEvent[]
 
   modalData!: {
     action: string;
@@ -46,20 +47,7 @@ export class ContractScheduleComponent implements OnInit {
     }
   ];
 
-  refresh: Subject<any> = new Subject();
-
-  events: CalendarEvent[] = [
-    {
-      start: startOfDay(new Date()),
-      end: endOfWeek(new Date()),
-      title: 'First event',
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'Second event',
-      actions: this.actions,
-    }
-  ]
+  refresh: Subject<any> = new Subject(); 
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -76,7 +64,8 @@ export class ContractScheduleComponent implements OnInit {
   }
 
 
-  constructor(private modal: NgbModal, private scheduleService: ScheduleService) { }
+  constructor(private modal: NgbModal, private scheduleService: ScheduleService) { 
+  }
 
   ngOnInit() {
     this.getReservations()
@@ -108,12 +97,23 @@ export class ContractScheduleComponent implements OnInit {
   setView(view: CalendarView) {
     this.view = view;
   }
-
   
   getReservations() {
-    this.scheduleService.getReservations().subscribe((data: any) => {    
-      debugger;  
-      this.reservation = data.reservations
+    this.scheduleService.getReservations().subscribe((data: any) => {
+      this.reservations = data.reservations
     });
+    this.mountCalendar(this.reservations)
+  }
+
+  mountCalendar(reservations: any){
+    // reservations.forEach(f => {
+    //   let reservation : CalendarEvent =  {
+    //     start: startOfDay(f.date),       
+    //     title: f.client_name,
+    //   }
+
+    //   this.events.push(reservation)
+    // })
+ 
   }
 }

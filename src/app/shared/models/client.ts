@@ -1,18 +1,19 @@
+import { ClientDoctors } from "./client-doctors";
+
 export interface Client {
   id: number;
   name: string;
+  kind_person: string;
   email: string;
-  kind: number;
   phone: string;
   status: boolean;
   document: string;
   zipcode: string;
   street: string;
-  number: number;
+  number: string;
   complement: string;
   neighborhood: string;
   city: string;
   state: string;
-  created_at: string;
-  updated_at: string;
+  doctors: ClientDoctors[];
 }

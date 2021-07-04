@@ -1,0 +1,424 @@
+{
+    "clients": [
+        {
+            "id": 1,
+            "name": "Samuel Aragão",
+            "kind_person": "PF",
+            "email": "orval@stark.io",
+            "phone": "+967 (97) 8568-6719",
+            "status": true,
+            "document": "580093542",
+            "zipcode": "29087-859",
+            "street": "Marginal Lara do Prado",
+            "number": "s/n",
+            "complement": "Sobrado 80",
+            "neighborhood": "Pine Court",
+            "city": "Monteiro",
+            "state": "Mato Grosso do Sul",
+            "doctors": [
+                {
+                    "id": 1,
+                    "name": "Drª Talita Pinto",
+                    "phone": "+34 (77) 5386-4416",
+                    "email": "marcelle.mcclure@weissnat-moen.com",
+                    "crm": "5296"
+                },
+                {
+                    "id": 2,
+                    "name": "Drª Joaquim de Assunção",
+                    "phone": "+354 (27) 0393-1039",
+                    "email": "hassie@roberts.com",
+                    "crm": "7100"
+                },
+                {
+                    "id": 3,
+                    "name": "Drª Dr. Bárbara Godinho",
+                    "phone": "+65 (16) 2184-4550",
+                    "email": "carlo.williamson@stroman.co",
+                    "crm": "9247"
+                },
+                {
+                    "id": 4,
+                    "name": "Drª Djalma Moura",
+                    "phone": "+381 (54) 7886-0613",
+                    "email": "boyce@grant.com",
+                    "crm": "4830"
+                },
+                {
+                    "id": 5,
+                    "name": "Drª Carlos Eduardo Camacho",
+                    "phone": "+256 (27) 8878-0002",
+                    "email": "joaquin.kub@macgyver.info",
+                    "crm": "9979"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 1,
+                    "starts_at": "2021-06-28T00:00:00.000Z",
+                    "ends_at": "2022-06-28T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Paula Amoreira",
+            "kind_person": "PF",
+            "email": "michale@brekke-smitham.info",
+            "phone": "+354 (21) 1309-6441",
+            "status": false,
+            "document": "256348571",
+            "zipcode": "73699-985",
+            "street": "Marginal Milena da Conceição",
+            "number": "2848",
+            "complement": "Sobrado 68",
+            "neighborhood": "Eagle Estates",
+            "city": "Ressaquinha",
+            "state": "Amapá",
+            "doctors": [
+                {
+                    "id": 6,
+                    "name": "Drª Meire Laranjeira",
+                    "phone": "+975 (63) 9074-9780",
+                    "email": "kenisha@hamill-morissette.org",
+                    "crm": "2509"
+                },
+                {
+                    "id": 7,
+                    "name": "Drª Alessandra Mendes",
+                    "phone": "+975 (94) 9163-0281",
+                    "email": "keva@aufderhar-kutch.info",
+                    "crm": "7728"
+                },
+                {
+                    "id": 8,
+                    "name": "Drª Bianca Aroeira",
+                    "phone": "+62 (71) 7781-6348",
+                    "email": "brian@ledner.biz",
+                    "crm": "6859"
+                },
+                {
+                    "id": 9,
+                    "name": "Drª Dr. Maria Luiza Nogueira",
+                    "phone": "+264 (32) 2999-9382",
+                    "email": "juana@rosenbaum.com",
+                    "crm": "6022"
+                },
+                {
+                    "id": 10,
+                    "name": "Drª Lucca Rolim",
+                    "phone": "+673 (68) 1423-6420",
+                    "email": "joesph.streich@schamberger.net",
+                    "crm": "3411"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 2,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Suélen da Barranca",
+            "kind_person": "PF",
+            "email": "adrienne@batz.org",
+            "phone": "+269 (18) 1791-0599",
+            "status": false,
+            "document": "68968177X",
+            "zipcode": "71363-116",
+            "street": "Travessa Gael da Terra",
+            "number": "41234",
+            "complement": "Apto. 335",
+            "neighborhood": "University Acres",
+            "city": "Boninal",
+            "state": "São Paulo",
+            "doctors": [
+                {
+                    "id": 11,
+                    "name": "Drª Srta. Lorenzo Galvão",
+                    "phone": "+809 (48) 5010-6038",
+                    "email": "daryl_beahan@hane.net",
+                    "crm": "9454"
+                },
+                {
+                    "id": 12,
+                    "name": "Drª Fabrício Lopes",
+                    "phone": "+299 (73) 1758-1861",
+                    "email": "arnoldo@shanahan-balistreri.biz",
+                    "crm": "1586"
+                },
+                {
+                    "id": 13,
+                    "name": "Drª Ana Luiza Guedes Jr.",
+                    "phone": "+675 (31) 0213-6121",
+                    "email": "murray@yundt.info",
+                    "crm": "8752"
+                },
+                {
+                    "id": 14,
+                    "name": "Drª Dr. Nathan Mangueira",
+                    "phone": "+509 (51) 9119-9221",
+                    "email": "shakia@borer-sporer.net",
+                    "crm": "5111"
+                },
+                {
+                    "id": 15,
+                    "name": "Drª Tertuliano da Barranca",
+                    "phone": "+36 (82) 7235-0964",
+                    "email": "suzann_lynch@murphy-ernser.name",
+                    "crm": "8537"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 3,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Dr. Pedro Tobias da Paz",
+            "kind_person": "PF",
+            "email": "bert_trantow@predovic-treutel.net",
+            "phone": "+235 (31) 0602-3581",
+            "status": true,
+            "document": "689717180",
+            "zipcode": "52898-156",
+            "street": "Rua Maria Alice Pinheira",
+            "number": "784",
+            "complement": "Sobrado 11",
+            "neighborhood": "Park Estates",
+            "city": "Tejuçuoca",
+            "state": "Alagoas",
+            "doctors": [
+                {
+                    "id": 16,
+                    "name": "Drª Sílvia Porto",
+                    "phone": "+94 (93) 9657-1474",
+                    "email": "archie@roberts.net",
+                    "crm": "7456"
+                },
+                {
+                    "id": 17,
+                    "name": "Drª Guilherme de Oliveira",
+                    "phone": "+886 (21) 1833-6746",
+                    "email": "solomon.champlin@corwin.io",
+                    "crm": "9177"
+                },
+                {
+                    "id": 18,
+                    "name": "Drª Maria Laura Rêgo",
+                    "phone": "+7 (97) 3561-0324",
+                    "email": "mirella@turner-watsica.io",
+                    "crm": "6963"
+                },
+                {
+                    "id": 19,
+                    "name": "Drª Emilly Datena",
+                    "phone": "+65 (12) 9636-9440",
+                    "email": "laurinda_hand@williamson.org",
+                    "crm": "1830"
+                },
+                {
+                    "id": 20,
+                    "name": "Drª Arthur Negrão",
+                    "phone": "+298 (41) 1815-3546",
+                    "email": "john@gottlieb.name",
+                    "crm": "7115"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 4,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Silas Moreira",
+            "kind_person": "PF",
+            "email": "olen@weissnat.name",
+            "phone": "+229 (21) 8080-1104",
+            "status": false,
+            "document": "513861944",
+            "zipcode": "12424-381",
+            "street": "Alameda Gabriel",
+            "number": "9630",
+            "complement": "Sobrado 36",
+            "neighborhood": "Summer Creek",
+            "city": "Suzanápolis",
+            "state": "Bahia",
+            "doctors": [
+                {
+                    "id": 21,
+                    "name": "Drª Dr. Gabriela Ordonhes",
+                    "phone": "+358 (65) 4861-6002",
+                    "email": "keith.kuvalis@williamson.biz",
+                    "crm": "9631"
+                },
+                {
+                    "id": 22,
+                    "name": "Drª Dra. João Miguel Campos",
+                    "phone": "+65 (64) 8301-4895",
+                    "email": "henry@dicki-hamill.co",
+                    "crm": "2753"
+                },
+                {
+                    "id": 23,
+                    "name": "Drª Maria Valentina Rebouças",
+                    "phone": "+960 (41) 0489-9015",
+                    "email": "josiah_botsford@ruecker-leuschke.info",
+                    "crm": "2270"
+                },
+                {
+                    "id": 24,
+                    "name": "Drª Sara Madeira",
+                    "phone": "+39 (32) 9666-0706",
+                    "email": "ross@mckenzie-schinner.com",
+                    "crm": "1082"
+                },
+                {
+                    "id": 25,
+                    "name": "Drª Igor Gomes Neto",
+                    "phone": "+248 (32) 7744-1716",
+                    "email": "lawerence@zemlak.io",
+                    "crm": "5574"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 5,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Dra. Francisco Ribas",
+            "kind_person": "PF",
+            "email": "marvin_gottlieb@sanford.co",
+            "phone": "+1-340 (74) 5233-1264",
+            "status": false,
+            "document": "40370988X",
+            "zipcode": "67952-581",
+            "street": "Ponte Aurora",
+            "number": "12568",
+            "complement": "Quadra 98",
+            "neighborhood": "Park Village",
+            "city": "Sacramento",
+            "state": "Bahia",
+            "doctors": [
+                {
+                    "id": 26,
+                    "name": "Drª João Silveira",
+                    "phone": "+254 (27) 4289-5218",
+                    "email": "donita@krajcik.net",
+                    "crm": "2541"
+                },
+                {
+                    "id": 27,
+                    "name": "Drª Carlos Hernandes",
+                    "phone": "+62 (68) 9022-7837",
+                    "email": "francie_spinka@wisoky.io",
+                    "crm": "8838"
+                },
+                {
+                    "id": 28,
+                    "name": "Drª Sr. Vitória Sá",
+                    "phone": "+31 (67) 8556-9243",
+                    "email": "genevive_satterfield@hettinger-cormier.net",
+                    "crm": "1701"
+                },
+                {
+                    "id": 29,
+                    "name": "Drª Valentina Assumpção Neto",
+                    "phone": "+853 (27) 0688-2692",
+                    "email": "louie.kuhn@johnson-ullrich.net",
+                    "crm": "4353"
+                },
+                {
+                    "id": 30,
+                    "name": "Drª Dra. Luana Dantas",
+                    "phone": "+972 (42) 9956-5267",
+                    "email": "callie.block@heathcote.name",
+                    "crm": "3075"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 6,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Tomás Dorneles",
+            "kind_person": "PF",
+            "email": "emmitt.howell@satterfield-rosenbaum.info",
+            "phone": "+852 (18) 8102-6092",
+            "status": false,
+            "document": "395433046",
+            "zipcode": "47494-925",
+            "street": "Avenida Eduardo",
+            "number": "992",
+            "complement": "Casa 7",
+            "neighborhood": "Paradise Square",
+            "city": "Divisa Nova",
+            "state": "Paraná",
+            "doctors": [
+                {
+                    "id": 31,
+                    "name": "Drª Bruna Laranjeira",
+                    "phone": "+594 (33) 1919-2299",
+                    "email": "willie_stanton@bergstrom.org",
+                    "crm": "2162"
+                },
+                {
+                    "id": 32,
+                    "name": "Drª Ayla Macieira",
+                    "phone": "+299 (89) 1533-6977",
+                    "email": "elenor@leuschke-volkman.name",
+                    "crm": "1302"
+                },
+                {
+                    "id": 33,
+                    "name": "Drª Ana Cecília Carneiro",
+                    "phone": "+1-758 (22) 1202-6692",
+                    "email": "armand@johnson.org",
+                    "crm": "8445"
+                },
+                {
+                    "id": 34,
+                    "name": "Drº Marcos do Prado",
+                    "phone": "+504 (84) 2137-2618",
+                    "email": "elizebeth@mosciski-halvorson.biz",
+                    "crm": "5585"
+                },
+                {
+                    "id": 35,
+                    "name": "Drª Sophia Moura",
+                    "phone": "+94 (16) 8819-1539",
+                    "email": "garret@adams-connelly.name",
+                    "crm": "5290"
+                }
+            ],
+            "contracts": [
+                {
+                    "id": 7,
+                    "starts_at": "2021-07-03T00:00:00.000Z",
+                    "ends_at": "2022-07-03T00:00:00.000Z"
+                }
+            ]
+        }
+    ]
+}

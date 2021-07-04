@@ -43,5 +43,20 @@
      },
      "file": "data/bills-response.json"
    }
+ },
+  {
+   "request": {
+      "url": "/clients",
+      "method": "get"
+   },
+   "response": {
+     "status": 200,
+     "latency": 2000,
+     "headers": {
+       "Content-Type": "application/json",
+       "Access-Control-Allow-Origin": "http://localhost:4200"
+     },
+     "file": "data/clients-response.json"
+   }
  }
 ]

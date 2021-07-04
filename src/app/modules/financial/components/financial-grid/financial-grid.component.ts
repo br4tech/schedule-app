@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Payroll } from 'src/app/shared/models/payroll';
 
 declare var $: any;
 
