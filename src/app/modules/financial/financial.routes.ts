@@ -9,7 +9,7 @@ export const ROUTES: Routes = [
                 path: '',
                 component: LayoutComponent,
                 children: [
-                        { path: 'bills', component: FinancialListComponent, resolve: { payrolls: FinancialResolverService } }
+                        { path: 'bills', component: FinancialListComponent, resolve: { item: FinancialResolverService } }
 
                 ]
         }

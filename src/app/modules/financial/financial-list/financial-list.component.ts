@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Payroll } from 'src/app/shared/models/payroll';
+
 @Component({
   selector: 'app-financial-list',
   templateUrl: './financial-list.component.html'
@@ -8,13 +8,13 @@ import { Payroll } from 'src/app/shared/models/payroll';
 
 export class FinancialListComponent implements OnInit {
 
-  payrolls: any;
+  bills: any;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(){
-   this.activatedRoute.data.subscribe((info) => {
-     this.payrolls = info.payrolls
+   this.activatedRoute.data.subscribe((data) => {
+     this.bills = data.item.bills
     })
   }
 }

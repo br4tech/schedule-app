@@ -1,0 +1,194 @@
+{
+    "bills": [
+        {
+            "id": 7,
+            "due_at": "2021-07-01",
+            "revenues_at": "2021-06-20",
+            "client_name": "Samuel Aragão",
+            "client_document": "580093542",
+            "sum_amount": 7650.0,
+            "bill_items": [
+                {
+                    "id": 52,
+                    "period": "2021-06-30",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 53,
+                    "period": "2021-07-02",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 54,
+                    "period": "2021-07-05",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 55,
+                    "period": "2021-07-07",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 56,
+                    "period": "2021-07-09",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "due_at": "2021-08-01",
+            "revenues_at": "2021-07-20",
+            "client_name": "Samuel Aragão",
+            "client_document": "580093542",
+            "sum_amount": 1530.0,
+            "bill_items": [
+                {
+                    "id": 74,
+                    "period": "2021-06-28",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "due_at": "2021-07-01",
+            "revenues_at": "2021-06-20",
+            "client_name": "Tomás Dorneles",
+            "client_document": "395433046",
+            "sum_amount": 3060.0,
+            "bill_items": [
+                {
+                    "id": 75,
+                    "period": "2021-07-06",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 76,
+                    "period": "2021-07-08",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "due_at": "2021-08-01",
+            "revenues_at": "2021-07-20",
+            "client_name": "Tomás Dorneles",
+            "client_document": "395433046",
+            "sum_amount": 10710.0,
+            "bill_items": [
+                {
+                    "id": 77,
+                    "period": "2021-07-20",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 78,
+                    "period": "2021-07-22",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 79,
+                    "period": "2021-08-03",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 80,
+                    "period": "2021-08-05",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 81,
+                    "period": "2021-08-17",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 82,
+                    "period": "2021-08-19",
+                    "clinic_id": 7,
+                    "office_name": "0104",
+                    "unit_name": "Jesus-Castelo",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                },
+                {
+                    "id": 83,
+                    "period": "2021-06-28",
+                    "clinic_id": 1,
+                    "office_name": "099",
+                    "unit_name": "Barbosa-Barreira",
+                    "hours": 17,
+                    "amount": "1530.0",
+                    "item_type": 0
+                }
+            ]
+        }
+    ]
+}

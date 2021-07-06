@@ -8,6 +8,7 @@ import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 import { DoctorFilterComponent } from './components/doctor-filter/doctor-filter.component';
 import { DoctorGridComponent } from './components/doctor-grid/doctor-grid.component';
+import { DoctorResolver } from './doctor.resolver';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { DoctorGridComponent } from './components/doctor-grid/doctor-grid.compon
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
+  ],
+  providers: [
+    DoctorResolver
   ]
 })
 export class DoctorModule { }

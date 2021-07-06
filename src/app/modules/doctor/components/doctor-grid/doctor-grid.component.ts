@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-doctor-grid',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor-grid.component.scss']
 })
 export class DoctorGridComponent implements OnInit {
+  
+  @Input() clients: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    debugger;
   }
 
 }

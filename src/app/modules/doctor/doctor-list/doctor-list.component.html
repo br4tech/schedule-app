@@ -7,7 +7,7 @@
           Médicos
         </span>
         <span class="text-muted mt-3 font-weight-bold font-size-sm">
-          x médicos na base
+          {{ clients.length }} médicos na base
         </span>
       </h3>
       <div class="card-toolbar">
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="card-body pt-0 pb-3">
-      <app-doctor-grid></app-doctor-grid>
+      <app-doctor-grid [clients] = "clients"></app-doctor-grid>
     </div>
   </div>
 

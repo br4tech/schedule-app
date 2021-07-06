@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { Payroll } from 'src/app/shared/models/payroll';
+import { Bill } from 'src/app/shared/models/bill';
 import { FinancialService } from './financial.service';
 
 @Injectable()
-export class FinancialResolverService implements Resolve<Payroll[]>{
+export class FinancialResolverService implements Resolve<Bill[]>{
 
   constructor(private financialService: FinancialService) { }
 
@@ -14,6 +14,6 @@ export class FinancialResolverService implements Resolve<Payroll[]>{
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
     ): Observable<any> | Promise<any> | any {
-      return this.financialService.getPayrolls();
+      return this.financialService.getBills();
   }
 }

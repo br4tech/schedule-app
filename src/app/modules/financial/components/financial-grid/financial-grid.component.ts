@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Payroll } from 'src/app/shared/models/payroll';
 
 declare var $: any;
 
@@ -11,7 +10,7 @@ declare var $: any;
 
 export class FinancialGridComponent implements OnInit {
 
-  @Input() payrolls: any[] = [];
+  @Input() bills: any[] = [];
   isShown: boolean = false;
   cell: number;
 
