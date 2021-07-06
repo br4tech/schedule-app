@@ -4,13 +4,13 @@
 }
 
 .w-default{
-  min-width: 180px !important;
-  max-width: 182px !important;
+  min-width: 140px !important;
+  max-width: 142px !important;  
+}
+
+.w-children{  
+  min-width: 180px;
+  max-width: 182px;
   text-align: left;
 }
 
-.w-children{
-  text-align: left !important;
-  min-width: 180px;
-  max-width: 182px;
-}

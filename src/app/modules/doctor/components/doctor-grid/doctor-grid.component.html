@@ -7,11 +7,11 @@
           <th class="datatable-cell datatable-cell-sort" style="width:10px;">
             <span></span>
           </th>
-          <th class="datatable-cell w-default" style="margin-left: 5px;">Nome</th>
-          <th class="datatable-cell w-default">Telefone</th>
-          <th class="datatable-cell w-default">Email</th>
-          <th class="datatable-cell w-default">Tipo Contrato</th>
-          <th class="datatable-cell"></th>
+          <th class="w-default text-left" style="margin-left: 25px;">Nome</th>
+          <th class="w-default text-left">Telefone</th>
+          <th class="w-default text-left">Email</th>
+          <th class="w-code text-center">Tipo</th>
+          <th class="w-default"></th>
         </tr>
       </thead>
       <tbody class="datatable-body">
@@ -41,12 +41,12 @@
                 {{ client.email }}
               </span>
             </td>
-            <td class="text-left w-children">
+            <td class="text-center w-code">
               <span>
                 {{ client.kind_person }}
               </span>
             </td>
-            <td class="pr-0 text-right w-children">
+            <td class="text-right w-children">
               <a href="user-edit" class="btn btn-light-success font-weight-bolder font-size-sm">
                 <i class="fa fa-pencil-square-o fa-1x"></i> Editar
                 </a>
