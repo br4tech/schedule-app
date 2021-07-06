@@ -21,35 +21,40 @@
                     "name": "Drª Talita Pinto",
                     "phone": "+34 (77) 5386-4416",
                     "email": "marcelle.mcclure@weissnat-moen.com",
-                    "crm": "5296"
+                    "crm": "5296",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 2,
                     "name": "Drª Joaquim de Assunção",
                     "phone": "+354 (27) 0393-1039",
                     "email": "hassie@roberts.com",
-                    "crm": "7100"
+                    "crm": "7100",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 3,
                     "name": "Drª Dr. Bárbara Godinho",
                     "phone": "+65 (16) 2184-4550",
                     "email": "carlo.williamson@stroman.co",
-                    "crm": "9247"
+                    "crm": "9247",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 4,
                     "name": "Drª Djalma Moura",
                     "phone": "+381 (54) 7886-0613",
                     "email": "boyce@grant.com",
-                    "crm": "4830"
+                    "crm": "4830",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 5,
                     "name": "Drª Carlos Eduardo Camacho",
                     "phone": "+256 (27) 8878-0002",
                     "email": "joaquin.kub@macgyver.info",
-                    "crm": "9979"
+                    "crm": "9979",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -81,35 +86,40 @@
                     "name": "Drª Meire Laranjeira",
                     "phone": "+975 (63) 9074-9780",
                     "email": "kenisha@hamill-morissette.org",
-                    "crm": "2509"
+                    "crm": "2509",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 7,
                     "name": "Drª Alessandra Mendes",
                     "phone": "+975 (94) 9163-0281",
                     "email": "keva@aufderhar-kutch.info",
-                    "crm": "7728"
+                    "crm": "7728",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 8,
                     "name": "Drª Bianca Aroeira",
                     "phone": "+62 (71) 7781-6348",
                     "email": "brian@ledner.biz",
-                    "crm": "6859"
+                    "crm": "6859",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 9,
                     "name": "Drª Dr. Maria Luiza Nogueira",
                     "phone": "+264 (32) 2999-9382",
                     "email": "juana@rosenbaum.com",
-                    "crm": "6022"
+                    "crm": "6022",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 10,
                     "name": "Drª Lucca Rolim",
                     "phone": "+673 (68) 1423-6420",
                     "email": "joesph.streich@schamberger.net",
-                    "crm": "3411"
+                    "crm": "3411",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -141,35 +151,40 @@
                     "name": "Drª Srta. Lorenzo Galvão",
                     "phone": "+809 (48) 5010-6038",
                     "email": "daryl_beahan@hane.net",
-                    "crm": "9454"
+                    "crm": "9454",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 12,
                     "name": "Drª Fabrício Lopes",
                     "phone": "+299 (73) 1758-1861",
                     "email": "arnoldo@shanahan-balistreri.biz",
-                    "crm": "1586"
+                    "crm": "1586",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 13,
                     "name": "Drª Ana Luiza Guedes Jr.",
                     "phone": "+675 (31) 0213-6121",
                     "email": "murray@yundt.info",
-                    "crm": "8752"
+                    "crm": "8752",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 14,
                     "name": "Drª Dr. Nathan Mangueira",
                     "phone": "+509 (51) 9119-9221",
                     "email": "shakia@borer-sporer.net",
-                    "crm": "5111"
+                    "crm": "5111",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 15,
                     "name": "Drª Tertuliano da Barranca",
                     "phone": "+36 (82) 7235-0964",
                     "email": "suzann_lynch@murphy-ernser.name",
-                    "crm": "8537"
+                    "crm": "8537",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -201,35 +216,40 @@
                     "name": "Drª Sílvia Porto",
                     "phone": "+94 (93) 9657-1474",
                     "email": "archie@roberts.net",
-                    "crm": "7456"
+                    "crm": "7456",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 17,
                     "name": "Drª Guilherme de Oliveira",
                     "phone": "+886 (21) 1833-6746",
                     "email": "solomon.champlin@corwin.io",
-                    "crm": "9177"
+                    "crm": "9177",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 18,
                     "name": "Drª Maria Laura Rêgo",
                     "phone": "+7 (97) 3561-0324",
                     "email": "mirella@turner-watsica.io",
-                    "crm": "6963"
+                    "crm": "6963",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 19,
                     "name": "Drª Emilly Datena",
                     "phone": "+65 (12) 9636-9440",
                     "email": "laurinda_hand@williamson.org",
-                    "crm": "1830"
+                    "crm": "1830",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 20,
                     "name": "Drª Arthur Negrão",
                     "phone": "+298 (41) 1815-3546",
                     "email": "john@gottlieb.name",
-                    "crm": "7115"
+                    "crm": "7115",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -261,35 +281,40 @@
                     "name": "Drª Dr. Gabriela Ordonhes",
                     "phone": "+358 (65) 4861-6002",
                     "email": "keith.kuvalis@williamson.biz",
-                    "crm": "9631"
+                    "crm": "9631",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 22,
                     "name": "Drª Dra. João Miguel Campos",
                     "phone": "+65 (64) 8301-4895",
                     "email": "henry@dicki-hamill.co",
-                    "crm": "2753"
+                    "crm": "2753",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 23,
                     "name": "Drª Maria Valentina Rebouças",
                     "phone": "+960 (41) 0489-9015",
                     "email": "josiah_botsford@ruecker-leuschke.info",
-                    "crm": "2270"
+                    "crm": "2270",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 24,
                     "name": "Drª Sara Madeira",
                     "phone": "+39 (32) 9666-0706",
                     "email": "ross@mckenzie-schinner.com",
-                    "crm": "1082"
+                    "crm": "1082",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 25,
                     "name": "Drª Igor Gomes Neto",
                     "phone": "+248 (32) 7744-1716",
                     "email": "lawerence@zemlak.io",
-                    "crm": "5574"
+                    "crm": "5574",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -321,35 +346,40 @@
                     "name": "Drª João Silveira",
                     "phone": "+254 (27) 4289-5218",
                     "email": "donita@krajcik.net",
-                    "crm": "2541"
+                    "crm": "2541",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 27,
                     "name": "Drª Carlos Hernandes",
                     "phone": "+62 (68) 9022-7837",
                     "email": "francie_spinka@wisoky.io",
-                    "crm": "8838"
+                    "crm": "8838",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 28,
                     "name": "Drª Sr. Vitória Sá",
                     "phone": "+31 (67) 8556-9243",
                     "email": "genevive_satterfield@hettinger-cormier.net",
-                    "crm": "1701"
+                    "crm": "1701",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 29,
                     "name": "Drª Valentina Assumpção Neto",
                     "phone": "+853 (27) 0688-2692",
                     "email": "louie.kuhn@johnson-ullrich.net",
-                    "crm": "4353"
+                    "crm": "4353",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 30,
                     "name": "Drª Dra. Luana Dantas",
                     "phone": "+972 (42) 9956-5267",
                     "email": "callie.block@heathcote.name",
-                    "crm": "3075"
+                    "crm": "3075",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
@@ -381,35 +411,40 @@
                     "name": "Drª Bruna Laranjeira",
                     "phone": "+594 (33) 1919-2299",
                     "email": "willie_stanton@bergstrom.org",
-                    "crm": "2162"
+                    "crm": "2162",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 32,
                     "name": "Drª Ayla Macieira",
                     "phone": "+299 (89) 1533-6977",
                     "email": "elenor@leuschke-volkman.name",
-                    "crm": "1302"
+                    "crm": "1302",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 33,
                     "name": "Drª Ana Cecília Carneiro",
                     "phone": "+1-758 (22) 1202-6692",
                     "email": "armand@johnson.org",
-                    "crm": "8445"
+                    "crm": "8445",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 34,
-                    "name": "Drº Marcos do Prado",
+                    "name": "Drª Marcos do Prado",
                     "phone": "+504 (84) 2137-2618",
                     "email": "elizebeth@mosciski-halvorson.biz",
-                    "crm": "5585"
+                    "crm": "5585",
+                    "specialty": "Ginecologista"
                 },
                 {
                     "id": 35,
                     "name": "Drª Sophia Moura",
                     "phone": "+94 (16) 8819-1539",
                     "email": "garret@adams-connelly.name",
-                    "crm": "5290"
+                    "crm": "5290",
+                    "specialty": "Ginecologista"
                 }
             ],
             "contracts": [
