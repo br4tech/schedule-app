@@ -1,8 +1,9 @@
 
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
-import { endOfMonth, endOfWeek, isSameDay, isSameMonth, startOfDay } from 'date-fns';
+import { endOfMonth, endOfWeek, getHours, isSameDay, isSameMonth, startOfDay } from 'date-fns';
 import { Subject } from 'rxjs';
 import { Reservation } from 'src/app/shared/models/reservation';
 import { ScheduleService } from '../schedule.service';
@@ -14,15 +15,17 @@ export class ContractScheduleComponent implements OnInit {
 
   @ViewChild("modalContent", { static: true }) modalContent: TemplateRef<any> | undefined;
 
-  viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
+  viewDate: Date = new Date();
   activeDayIsOpen: boolean = true;
   locale: string = 'pt-PT';
  
   reservation = {} as Reservation;
   reservations: Reservation[] = [];
-  events: CalendarEvent[]
+  events: CalendarEvent[] = [];
+
+  resercations: any;
 
   modalData!: {
     action: string;
@@ -49,6 +52,9 @@ export class ContractScheduleComponent implements OnInit {
 
   refresh: Subject<any> = new Subject(); 
 
+  dayStartHour = Math.max(0, getHours(new Date()) - 2);
+  dayEndHour = Math.min(23, getHours(new Date()) + 11);
+
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -64,16 +70,16 @@ export class ContractScheduleComponent implements OnInit {
   }
 
 
-  constructor(private modal: NgbModal, private scheduleService: ScheduleService) { 
+  constructor(
+    private modal: NgbModal,  
+    private activatedRoute: ActivatedRoute) { 
   }
 
   ngOnInit() {
-    this.getReservations()
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: "lg" });
+    this.activatedRoute.data.subscribe((data) => {
+     this.reservations = data.item.reservations
+    });  
+    this.mountCalendar(this.reservations) 
   }
 
   eventTimesChanged({
@@ -94,26 +100,36 @@ export class ContractScheduleComponent implements OnInit {
     this.handleEvent('Dropped or resized', event);
   }
 
+  handleEvent(action: string, event: CalendarEvent): void {
+    this.modalData = { event, action };
+    this.modal.open(this.modalContent, { size: "lg" });
+  }
+
   setView(view: CalendarView) {
     this.view = view;
-  }
-  
-  getReservations() {
-    this.scheduleService.getReservations().subscribe((data: any) => {
-      this.reservations = data.reservations
-    });
-    this.mountCalendar(this.reservations)
-  }
+  } 
 
-  mountCalendar(reservations: any){
-    // reservations.forEach(f => {
-    //   let reservation : CalendarEvent =  {
-    //     start: startOfDay(f.date),       
-    //     title: f.client_name,
-    //   }
 
-    //   this.events.push(reservation)
-    // })
+  mountCalendar(reservations: any[]){
+    reservations.map((f) => {
+      let start = f.date + " " + f.time_start
+      let end = f.date + " " + f.time_end
+      let reservation_kind = f.detached ? "Avulsa" : "Normal"
+      let description = " Médico(a) " + f.client_name + 
+                        ", Unidade: " + f.unit_name +
+                        ", Sala: " + f.office_name +
+                        ", Horário: " + f.time_start + " até " + f.time_end +
+                        ", Reserva: " + reservation_kind
+
+      let reservation : CalendarEvent =  {
+        start: new Date(start),   
+        end: new Date(end),      
+        title: description      
+      }
+      this.events.push(reservation)
+    })
+
+    new Date("2021-07-06  21:25:28")
  
   }
 }
