@@ -41,8 +41,7 @@
           [viewDate]="viewDate"
           [events]="events"
           [refresh]="refresh"
-          [activeDayIsOpen]="activeDayIsOpen"
-          (dayClicked)="dayClicked($event.day)"
+          [activeDayIsOpen]="activeDayIsOpen"     
           (eventClicked)="handleEvent('Clicked', $event.event)"
           [locale]="locale">
         </mwl-calendar-month-view>
