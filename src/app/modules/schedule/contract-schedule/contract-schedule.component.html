@@ -52,7 +52,9 @@
           [events]="events"
           [refresh]="refresh"
           (eventClicked)="handleEvent('Clicked', $event.event)"
-          [locale]="locale">
+          [locale]="locale"
+          [dayStartHour]="dayStartHour"
+          [dayEndHour]="dayEndHour">
         </mwl-calendar-week-view>
 
         <mwl-calendar-day-view
@@ -61,7 +63,9 @@
           [events]="events"
           [refresh]="refresh"
           (eventClicked)="handleEvent('Clicked', $event.event)"
-          [locale]="locale">
+          [locale]="locale"
+          [dayStartHour]="dayStartHour"
+          [dayEndHour]="dayEndHour">
         </mwl-calendar-day-view>
       </div>
     </div>
