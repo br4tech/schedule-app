@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/modules/settings/settings.service';
 
 @Component({
   selector: 'app-aside',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AsideComponent implements OnInit {
+  offices:  any;
 
-  constructor() { }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit(): void {
+    this.getOffices();
   }
 
+  getOffices(){
+    this.settingsService.getOffices().subscribe((data : any) => {
+      this.offices = data.offices;     
+    });
+  }
 }

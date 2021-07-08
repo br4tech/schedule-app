@@ -71,73 +71,17 @@
       <div class="tab-content">
         <div class="tab-pane p-2 fade show active">
           <h3 class="p-2 p-lg-3 my-1 my-lg-3"> Unidades </h3>
-          <div class="list list-hover">
+          <div class="list list-hover" *ngFor="let office of offices">
             <div class="list-item hoverable p-2 p-lg-3 mb-2">
               <div class="d-flex align-items-center">
                 <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
-                  <input type="checkbox" value="1">
+                  <input type="checkbox" value="{{ office.id }}" checked="true">
                   <span></span>
                 </label>
                 <div class="d-flex align-items-center">
                   <div class="d-flex flex-column flex-grow-1 mr-2">
-                    <span class="text-dark-75 font-size-h6 mb-0">Pinheiros</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">9 salas cadastradas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="list-item hoverable p-2 p-lg-3 mb-2">
-              <div class="d-flex align-items-center">
-                <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
-                  <input type="checkbox" value="1">
-                  <span></span>
-                </label>
-                <div class="d-flex align-items-center">
-                  <div class="d-flex flex-column flex-grow-1 mr-2">
-                    <span class="text-dark-75 font-size-h6 mb-0">Cardeal Arcoverde</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">9 salas cadastradas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="list-item hoverable p-2 p-lg-3 mb-2">
-              <div class="d-flex align-items-center">
-                <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
-                  <input type="checkbox" value="1">
-                  <span></span>
-                </label>
-                <div class="d-flex align-items-center">
-                  <div class="d-flex flex-column flex-grow-1 mr-2">
-                    <span class="text-dark-75 font-size-h6 mb-0">Maestro Cardim</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">9 salas cadastradas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="list-item hoverable p-2 p-lg-3 mb-2">
-              <div class="d-flex align-items-center">
-                <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
-                  <input type="checkbox" value="1">
-                  <span></span>
-                </label>
-                <div class="d-flex align-items-center">
-                  <div class="d-flex flex-column flex-grow-1 mr-2">
-                    <span class="text-dark-75 font-size-h6 mb-0">Pamplona</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">9 salas cadastradas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="list-item hoverable p-2 p-lg-3 mb-2">
-              <div class="d-flex align-items-center">
-                <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
-                  <input type="checkbox" value="1">
-                  <span></span>
-                </label>
-                <div class="d-flex align-items-center">
-                  <div class="d-flex flex-column flex-grow-1 mr-2">
-                    <span class="text-dark-75 font-size-h6 mb-0">Veiga Filho</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">9 salas cadastradas</a>
+                    <span class="text-dark-75 font-size-h9 mb-0">{{ office.name }}</span>
+                    <a href="#" class="text-muted text-hover-primary font-weight-bold">{{office.clinics.length}} salas cadastradas</a>
                   </div>
                 </div>
               </div>
