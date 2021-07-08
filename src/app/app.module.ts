@@ -18,6 +18,7 @@ import { SettingsModule } from './modules/settings/settings.module';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
 import { SubheaderComponent } from './shared/layout/subheader/subheader.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 registerLocaleData(localePt);
 
@@ -31,6 +32,7 @@ registerLocaleData(localePt);
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    NgxUiLoaderModule,
     AppRoutingModule,
     HttpClientModule,
     ScheduleModule,
