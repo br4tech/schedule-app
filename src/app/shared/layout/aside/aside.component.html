@@ -81,12 +81,19 @@
                 <div class="d-flex align-items-center">
                   <div class="d-flex flex-column flex-grow-1 mr-2">
                     <span class="text-dark-75 font-size-h9 mb-0">{{ office.name }}</span>
-                    <a href="#" class="text-muted text-hover-primary font-weight-bold">{{office.clinics.length}} salas cadastradas</a>
+                    <a routerLink="settings/office/{{ office.id }}" class="text-muted text-hover-primary font-weight-bold">
+                      {{office.clinics.length}} salas cadastradas
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <hr />
+          <a routerLink="/settings/office" class="btn btn-primary btn-block font-weight-bold mr-2">
+            <i class=""></i>
+            <i class="fa fa-plus-circle"></i> Nova Unidade
+          </a>
         </div>
       </div>
     </div>

@@ -9,17 +9,22 @@ import { FinancialResolverService } from "./financial/financial-resolver.service
 import { DoctorEditComponent } from "./doctor/doctor-edit/doctor-edit.component";
 import { DoctorListComponent } from "./doctor/doctor-list/doctor-list.component";
 import { DoctorResolver } from "./doctor/doctor.resolver";
+import { ContractScheduleComponent } from "./schedule/contract-schedule/contract-schedule.component";
+import { ScheduleResolver } from "./schedule/schedule.resolver";
 
 export const ROUTES: Routes = [
         {
                 path: '',
-                component: LayoutComponent,
+                component: LayoutComponent,             
                 children: [
-                                { path: 'contract-list', component: ContractListComponent },
-                                { path: 'contract-edit', component: ContractEditComponent },
-                                { path: 'bills', component: FinancialListComponent, resolve: { item: FinancialResolverService }},
-                                { path: 'doctor-list', component: DoctorListComponent, resolve: { item: DoctorResolver } },
-                                { path: 'doctor-edit', component: DoctorEditComponent }
+                        { path: '', redirectTo: 'schedule', pathMatch: 'full' },
+                        { path: 'schedule', component: ContractScheduleComponent, resolve: { item: ScheduleResolver } },
+                        { path: 'contract-list', component: ContractListComponent },
+                        { path: 'contract-edit', component: ContractEditComponent },
+                        { path: 'bills', component: FinancialListComponent, resolve: { item: FinancialResolverService }},
+                        { path: 'doctor-list', component: DoctorListComponent, resolve: { item: DoctorResolver } },
+                        { path: 'doctor-edit', component: DoctorEditComponent },
+                        { path: 'settings', loadChildren: () => import('./settings/settings.module').then( m => m.SettingsModule )}
                 ] 
         }
 ]

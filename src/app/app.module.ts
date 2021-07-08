@@ -7,18 +7,14 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt-PT';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ScheduleModule } from './modules/schedule/schedule.module';
-import { ContractModule  } from './modules/contract/contract.module';
-import { FinancialModule } from './modules/financial/financial.module';
 import { ReportModule } from './modules/report/reporte.module';
 import { UserModule } from './modules/user/user.module';
-import { DoctorModule } from './modules/doctor/doctor.module';
-import { SettingsModule } from './modules/settings/settings.module';
 
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
 import { SubheaderComponent } from './shared/layout/subheader/subheader.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ModulesModule } from './modules/modules.module';
 
 registerLocaleData(localePt);
 
@@ -35,13 +31,9 @@ registerLocaleData(localePt);
     NgxUiLoaderModule,
     AppRoutingModule,
     HttpClientModule,
-    ScheduleModule,
-    ContractModule,
-    FinancialModule,
+    ModulesModule,    
     ReportModule,
-    UserModule,
-    DoctorModule,
-    SettingsModule
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent],
