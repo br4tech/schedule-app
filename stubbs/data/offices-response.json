@@ -1,0 +1,489 @@
+{
+    "offices": [
+        {
+            "id": 25,
+            "name": "Mangueira, Dantas e Datena",
+            "code": "099",
+            "clinics": [
+                {
+                    "id": 98,
+                    "office_id": 25,
+                    "code": "099",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#d1a172"
+                },
+                {
+                    "id": 99,
+                    "office_id": 25,
+                    "code": "0100",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#8382a3"
+                },
+                {
+                    "id": 100,
+                    "office_id": 25,
+                    "code": "0101",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#d1a21c"
+                },
+                {
+                    "id": 101,
+                    "office_id": 25,
+                    "code": "0102",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#00af7b"
+                },
+                {
+                    "id": 102,
+                    "office_id": 25,
+                    "code": "0103",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#442fff"
+                },
+                {
+                    "id": 103,
+                    "office_id": 25,
+                    "code": "0104",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#c7b6a0"
+                },
+                {
+                    "id": 104,
+                    "office_id": 25,
+                    "code": "0105",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#8d00d4"
+                },
+                {
+                    "id": 105,
+                    "office_id": 25,
+                    "code": "0106",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#1c335b"
+                },
+                {
+                    "id": 106,
+                    "office_id": 25,
+                    "code": "0107",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#e353e4"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Pinto, Santana e Esteves",
+            "code": "0100",
+            "clinics": [
+                {
+                    "id": 107,
+                    "office_id": 26,
+                    "code": "0108",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#547be9"
+                },
+                {
+                    "id": 108,
+                    "office_id": 26,
+                    "code": "0109",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#bf5343"
+                },
+                {
+                    "id": 109,
+                    "office_id": 26,
+                    "code": "0110",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#b8eb7a"
+                },
+                {
+                    "id": 110,
+                    "office_id": 26,
+                    "code": "0111",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#5293a2"
+                },
+                {
+                    "id": 111,
+                    "office_id": 26,
+                    "code": "0112",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#735530"
+                },
+                {
+                    "id": 112,
+                    "office_id": 26,
+                    "code": "0113",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#d2d35e"
+                },
+                {
+                    "id": 113,
+                    "office_id": 26,
+                    "code": "0114",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#c87d16"
+                },
+                {
+                    "id": 114,
+                    "office_id": 26,
+                    "code": "0115",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#b74987"
+                },
+                {
+                    "id": 115,
+                    "office_id": 26,
+                    "code": "0116",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#1ce623"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Cardoso Comércio",
+            "code": "0101",
+            "clinics": [
+                {
+                    "id": 116,
+                    "office_id": 27,
+                    "code": "0117",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#56c474"
+                },
+                {
+                    "id": 117,
+                    "office_id": 27,
+                    "code": "0118",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#f053bb"
+                },
+                {
+                    "id": 118,
+                    "office_id": 27,
+                    "code": "0119",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#15ef28"
+                },
+                {
+                    "id": 119,
+                    "office_id": 27,
+                    "code": "0120",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#d1ba90"
+                },
+                {
+                    "id": 120,
+                    "office_id": 27,
+                    "code": "0121",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#4e97dc"
+                },
+                {
+                    "id": 121,
+                    "office_id": 27,
+                    "code": "0122",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#292071"
+                },
+                {
+                    "id": 122,
+                    "office_id": 27,
+                    "code": "0123",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#58ad94"
+                },
+                {
+                    "id": 123,
+                    "office_id": 27,
+                    "code": "0124",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#a8823a"
+                },
+                {
+                    "id": 124,
+                    "office_id": 27,
+                    "code": "0125",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#a1da30"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Cavalcanti-de Lara",
+            "code": "0102",
+            "clinics": [
+                {
+                    "id": 125,
+                    "office_id": 28,
+                    "code": "0126",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#61b1b1"
+                },
+                {
+                    "id": 126,
+                    "office_id": 28,
+                    "code": "0127",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#66c693"
+                },
+                {
+                    "id": 127,
+                    "office_id": 28,
+                    "code": "0128",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#90ed35"
+                },
+                {
+                    "id": 128,
+                    "office_id": 28,
+                    "code": "0129",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#e550ce"
+                },
+                {
+                    "id": 129,
+                    "office_id": 28,
+                    "code": "0130",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#cfcfc2"
+                },
+                {
+                    "id": 130,
+                    "office_id": 28,
+                    "code": "0131",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#fb0c6c"
+                },
+                {
+                    "id": 131,
+                    "office_id": 28,
+                    "code": "0132",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#df58bc"
+                },
+                {
+                    "id": 132,
+                    "office_id": 28,
+                    "code": "0133",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#151b55"
+                },
+                {
+                    "id": 133,
+                    "office_id": 28,
+                    "code": "0134",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#5cd27d"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Siqueiro, Vasques e Ramalho",
+            "code": "0103",
+            "clinics": [
+                {
+                    "id": 134,
+                    "office_id": 29,
+                    "code": "0135",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#22854d"
+                },
+                {
+                    "id": 135,
+                    "office_id": 29,
+                    "code": "0136",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#18c4f2"
+                },
+                {
+                    "id": 136,
+                    "office_id": 29,
+                    "code": "0137",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#2905ed"
+                },
+                {
+                    "id": 137,
+                    "office_id": 29,
+                    "code": "0138",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#135359"
+                },
+                {
+                    "id": 138,
+                    "office_id": 29,
+                    "code": "0139",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#d98d45"
+                },
+                {
+                    "id": 139,
+                    "office_id": 29,
+                    "code": "0140",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#8dcd02"
+                },
+                {
+                    "id": 140,
+                    "office_id": 29,
+                    "code": "0141",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#cf783a"
+                },
+                {
+                    "id": 141,
+                    "office_id": 29,
+                    "code": "0142",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#200583"
+                },
+                {
+                    "id": 142,
+                    "office_id": 29,
+                    "code": "0143",
+                    "status": 1,
+                    "price": "20.0",
+                    "metrics": "50x50m",
+                    "medical_specialties": "Oftalmo",
+                    "color": "#da2aed"
+                }
+            ]
+        }
+    ]
+}

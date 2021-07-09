@@ -3,10 +3,11 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
-import { endOfMonth, endOfWeek, getHours, isSameDay, isSameMonth, startOfDay } from 'date-fns';
+import { getHours, isSameDay, isSameMonth} from 'date-fns';
 import { Subject } from 'rxjs';
 import { Reservation } from 'src/app/shared/models/reservation';
-import { ScheduleService } from '../schedule.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
 @Component({
   selector: 'app-contract-schedule',
   templateUrl: './contract-schedule.component.html'
@@ -52,8 +53,8 @@ export class ContractScheduleComponent implements OnInit {
 
   refresh: Subject<any> = new Subject(); 
 
-  dayStartHour = Math.max(0, getHours(new Date()) - 2);
-  dayEndHour = Math.min(23, getHours(new Date()) + 11);
+  dayStartHour = 8;
+  dayEndHour = 21
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -72,14 +73,17 @@ export class ContractScheduleComponent implements OnInit {
 
   constructor(
     private modal: NgbModal,  
-    private activatedRoute: ActivatedRoute) { 
-  }
+    private activatedRoute: ActivatedRoute,
+    private ngxService: NgxUiLoaderService
+    ) {}
 
   ngOnInit() {
+    this.ngxService.start(); 
     this.activatedRoute.data.subscribe((data) => {
      this.reservations = data.item.reservations
     });  
     this.mountCalendar(this.reservations) 
+    this.ngxService.stop(); 
   }
 
   eventTimesChanged({

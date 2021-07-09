@@ -19,6 +19,8 @@ import { DoctorEditComponent } from './doctor/doctor-edit/doctor-edit.component'
 import { DoctorFilterComponent } from './doctor/components/doctor-filter/doctor-filter.component';
 import { DoctorGridComponent } from './doctor/components/doctor-grid/doctor-grid.component';
 import { DoctorResolver } from './doctor/doctor.resolver';
+import { ContractScheduleComponent } from './schedule/contract-schedule/contract-schedule.component';
+import { ScheduleResolver } from './schedule/schedule.resolver';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import { DoctorResolver } from './doctor/doctor.resolver';
     })
   ],
   declarations: [
+    ContractScheduleComponent,
     ContractListComponent,
     ContractEditComponent,
     FilterUniquePipe,
@@ -45,6 +48,7 @@ import { DoctorResolver } from './doctor/doctor.resolver';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers:[
+    ScheduleResolver,
     FinancialResolverService,
     DoctorResolver
   ]
