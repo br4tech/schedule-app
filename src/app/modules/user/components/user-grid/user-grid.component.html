@@ -1,53 +1,93 @@
-<div class="tab-content">
-  <div class="table-responsive">
-    <table class="table table-head-custom table-vertical-center table-head-bg table-borderless">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Telefone</th>
-          <th>Email</th>
-          <th>Unidade</th>
-          <th></th>
+  <div class="card-body">
+    <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-subtable
+      datatable-loaded">
+      <table class="datatable-table" style="display: block;">
+      <thead class="datatable-head">
+        <tr class="datatable-row">
+          <th class="datatable-cell datatable-cell-sort col-lg-1" style="width:10px;">
+            <span></span>
+          </th>
+          <th class="w-default text-left" style="margin-left: 25px !important;">Nome</th>
+          <th class="w-default text-left">Telefone</th>
+          <th class="w-default text-left">Email</th>   
+          <th class="w-code text-left">Perfil</th>         
+          <th class="w-code text-left"></th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="pl-0 py-8">
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-50 symbol-light mr-4">
-                <span class="symbol-label">
-                  <img src="../../../../assets/images/001-boy.svg" class="h-75 align-self-end">
-                </span>
+      <tbody class="datatable-body">
+        <div *ngFor="let user of users">
+          <tr class="datatable-row datatable-row datatable-row-even datatable-row-subtable-expanded">
+            <td class="datatable-cell-center" style="width:10px;">
+              <a class="datatable-toggle-subtable" (click)="toggleShow(user.id)">
+                <i style="width: 30px;" class="fa fa-caret-down" *ngIf="isShown"></i>
+                <i style="width: 30px;" class="fa fa-caret-right" *ngIf="!isShown"></i>
+              </a>
+            </td>
+            <td class="pl-0 py-8 w-children">
+              <div class="d-flex align-items-center">
+                <div class="symbol symbol-50 symbol-light mr-4">
+                  <span class="symbol-label">
+                    <img src="../../../../assets/images/001-boy.svg" class="h-75 align-self-end">
+                  </span>
+                </div>
+                <div>
+                  <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
+                    {{ user.name }}
+                    <span class="text-muted font-weight-bold d-block">{{ user.document }}</span>
+                  </a>
+                </div>
               </div>
-              <div>
-                <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
-                  Brad Simmons
-                  <span class="text-muted font-weight-bold d-block">Oftalmologista</span>
-                </a>
+            </td>
+            <td class="text-left w-children">
+              <span>
+              {{ user.phone }}
+              </span>
+            </td>
+            <td class="text-left w-children">
+              <span>
+                {{ user.email }}
+              </span>
+            </td>
+            <td class="text-left w-code">
+              <span>
+                {{ user.role }}
+              </span>
+            </td>                
+            <td class="pr-0 text-right">
+              <a routerLink="user/{{user.id }}" class="btn btn-light-success font-weight-bolder font-size-sm">
+                <i class="fa fa-pencil-square-o fa-1x"></i> Editar
+              </a>
+            </td>
+          </tr>
+          <tr class="datatable-row-subtable" *ngIf="user.accesses.length > 0 && isShown">
+            <td class="datatable-subtable" colspan="6">
+              <div class="datatable datatable-default datatable-primary datatable-loaded">
+                <table class="datatable-table">
+                  <thead class="datatable-head">
+                    <tr class="datatable-row">
+                      <th class="text-left w-default">
+                        <span>Código</span>
+                      </th>
+                      <th class="text-left w-default">
+                        <span>Unidade</span>
+                      </th>                                                                                            
+                    </tr>
+                  </thead>
+                  <tbody class="datatable-body">
+                    <tr *ngFor="let access of user.accesses" class="datatable-row text-center">
+                      <td class="text-left w-children">
+                        <span>{{ access.id }}</span>
+                      </td>
+                      <td class="text-left w-children">
+                        <span>{{ access.office_name }}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </div>
-          </td>
-          <td>
-            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-              (19) 9993-677272
-            </span>
-          </td>
-          <td>
-            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-              brad.simons@permat.com.br
-            </span>
-          </td>
-          <td>
-            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-              Unidade Cardeal
-            </span>
-          </td>
-          <td class="pr-0 text-right">
-            <a href="user-edit" class="btn btn-light-success font-weight-bolder font-size-sm">
-              <i class="fa fa-pencil-square-o fa-1x"></i> Editar
-            </a>
-          </td>
-        </tr>
+            </td>
+          </tr>
+        </div>
       </tbody>
     </table>
   </div>

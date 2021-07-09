@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-grid',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-grid.component.scss']
 })
 export class UserGridComponent implements OnInit {
-
+  
+  @Input() users: any[] = [];
+  isShown: boolean = false;
+  cell: number;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleShow(id: number) {
+    this.cell = id
+    this.isShown = !this.isShown;
   }
 
 }

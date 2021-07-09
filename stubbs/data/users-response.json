@@ -1,0 +1,46 @@
+{
+    "users": [
+        {
+            "id": 96,
+            "name": "Catarina Porto",
+            "email": "hai@stehr.io",
+            "document": "592770412",
+            "phone": "+1-345 (15) 4028-0662",
+            "role": "admin",
+            "accesses": [
+                {
+                    "id": 1,
+                    "office_name": "Munhoz-Rios"
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "name": "Maria Cecília Galvão",
+            "email": "evan_goyette@abernathy.name",
+            "document": "136649798",
+            "phone": "+971 (53) 9502-4682",
+            "role": "manager",
+            "accesses": [
+                {
+                    "id": 2,
+                    "office_name": "Munhoz-Rios"
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "name": "Kaique Taveira",
+            "email": "chuck@dietrich.org",
+            "document": "800715469",
+            "phone": "+371 (67) 8399-7253",
+            "role": "regular",
+            "accesses": [
+                {
+                    "id": 3,
+                    "office_name": "Munhoz-Rios"
+                }
+            ]
+        }
+    ]
+}

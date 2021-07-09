@@ -12,15 +12,23 @@ import { FilterUniquePipe } from '../shared/pipes/filter-unique.pipe';
 
 import { FinancialFilterComponent } from './financial/components/financial-filter/financial-filter.component';
 import { FinancialGridComponent } from './financial/components/financial-grid/financial-grid.component';
-import { FinancialResolverService } from './financial/financial-resolver.service';
 import { FinancialListComponent } from './financial/financial-list/financial-list.component';
 import { DoctorListComponent } from './doctor/doctor-list/doctor-list.component';
 import { DoctorEditComponent } from './doctor/doctor-edit/doctor-edit.component';
 import { DoctorFilterComponent } from './doctor/components/doctor-filter/doctor-filter.component';
 import { DoctorGridComponent } from './doctor/components/doctor-grid/doctor-grid.component';
-import { DoctorResolver } from './doctor/doctor.resolver';
 import { ContractScheduleComponent } from './schedule/contract-schedule/contract-schedule.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserGridComponent } from './user/components/user-grid/user-grid.component';
+import { UserFilterComponent } from './user/components/user-filter/user-filter.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+
+
+import { UserResolver } from './user/user.resolver';
+import { DoctorResolver } from './doctor/doctor.resolver';
 import { ScheduleResolver } from './schedule/schedule.resolver';
+import { FinancialResolverService } from './financial/financial-resolver.service';
 
 @NgModule({
   imports: [
@@ -42,7 +50,12 @@ import { ScheduleResolver } from './schedule/schedule.resolver';
     DoctorListComponent,
     DoctorEditComponent,
     DoctorFilterComponent,
-    DoctorGridComponent
+    DoctorGridComponent,
+    UserListComponent,
+    UserFilterComponent,
+    UserGridComponent,
+    UserEditComponent,
+    UserProfileComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -50,7 +63,8 @@ import { ScheduleResolver } from './schedule/schedule.resolver';
   providers:[
     ScheduleResolver,
     FinancialResolverService,
-    DoctorResolver
+    DoctorResolver,
+    UserResolver
   ]
 })
 
