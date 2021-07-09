@@ -8,7 +8,6 @@ import localePt from '@angular/common/locales/pt-PT';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ReportModule } from './modules/report/reporte.module';
-import { UserModule } from './modules/user/user.module';
 
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
@@ -32,8 +31,7 @@ registerLocaleData(localePt);
     AppRoutingModule,
     HttpClientModule,
     ModulesModule,    
-    ReportModule,
-    UserModule
+    ReportModule
   ],
   providers: [],
   bootstrap: [AppComponent],

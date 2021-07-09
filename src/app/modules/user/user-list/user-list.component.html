@@ -7,15 +7,15 @@
           Usuarios
         </span>
         <span class="text-muted mt-3 font-weight-bold font-size-sm">
-          x usuarios na base
+          {{ users.length}} usuarios na base
         </span>
       </h3>
       <div class="card-toolbar">
-        <a href="user-edit" class="btn btn-info font-weight-bolder font-size-sm mr-3">Novo Usuário</a>
+        <a routerLink="user-list/user" class="btn btn-info font-weight-bolder font-size-sm mr-3">Novo Usuário</a>
       </div>
     </div>
     <div class="card-body pt-0 pb-3">
-      <app-user-grid></app-user-grid>
+      <app-user-grid [users]=users></app-user-grid>
     </div>
   </div>
 
