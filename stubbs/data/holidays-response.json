@@ -1,0 +1,55 @@
+{
+    "holidays": [
+        {
+            "id": 16,
+            "name": "Recesso",
+            "starts_at": "2021-07-10T00:00:00.000Z",
+            "ends_at": "2021-07-15T00:00:00.000Z",
+            "day_offs": [
+                {
+                    "id": 27,
+                    "date": "2021-07-10T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#583fdc"
+                },
+                {
+                    "id": 28,
+                    "date": "2021-07-11T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#52c1d2"
+                },
+                {
+                    "id": 29,
+                    "date": "2021-07-12T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#6d18b1"
+                },
+                {
+                    "id": 30,
+                    "date": "2021-07-13T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#791a19"
+                },
+                {
+                    "id": 31,
+                    "date": "2021-07-14T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#08dd3c"
+                },
+                 {
+                    "id": 31,
+                    "date": "2021-07-15T00:00:00.000Z",
+                    "description": "Day off",
+                    "color": "#08dd3c"
+                }
+            ]
+        },
+         {
+            "id": 17,
+            "name": "Feriado",
+            "starts_at": "2021-07-16T00:00:00.000Z",
+            "ends_at": "2021-07-16T00:00:00.000Z",
+            "day_offs": []
+         }
+    ]
+}
