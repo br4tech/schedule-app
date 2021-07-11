@@ -9,6 +9,7 @@ import { OffDayFilterComponent } from './off-day/components/off-day-filter/off-d
 import { OffDayGridComponent } from './off-day/components/off-day-grid/off-day-grid.component';
 import { OffDayEditComponent } from './off-day/off-day-edit/off-day-edit.component';
 import { OfficesComponent } from './offices/offices.component';
+import { OffDayResolver } from './off-day/off-day.resolver';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,9 @@ import { OfficesComponent } from './offices/offices.component';
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
-  ]
+  ],
+   providers:[
+     OffDayResolver
+   ]
 })
 export class SettingsModule { }
