@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-off-day-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffDayListComponent implements OnInit {
 
-  constructor() { }
+  holidays: any;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private ngxService: NgxUiLoaderService
+  ) { }
 
   ngOnInit(): void {
+    this.ngxService.start(); 
+    this.activatedRoute.data.subscribe((data) => {
+      this.holidays = data.item.holidays
+    })
+    this.ngxService.stop(); 
   }
-
 }

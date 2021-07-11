@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-off-day-grid',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffDayGridComponent implements OnInit {
 
+  @Input() holidays: any[] = [];
+  isShown: boolean = false;
+  cell: number;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleShow(id: number) {
+    this.cell = id
+    this.isShown = !this.isShown;
   }
 
 }
