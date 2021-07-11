@@ -23,7 +23,10 @@ import { UserGridComponent } from './user/components/user-grid/user-grid.compone
 import { UserFilterComponent } from './user/components/user-filter/user-filter.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
-
+import { CompanyListComponent } from './company/company-list/company-list.component';
+import { CompanyEditComponent } from './company/company-edit/company-edit.component';
+import { CompanyFilterComponent } from './company/components/company-filter/company-filter.component';
+import { CompanyGridComponent } from './company/components/company-grid/company-grid.component';
 
 import { UserResolver } from './user/user.resolver';
 import { DoctorResolver } from './doctor/doctor.resolver';
@@ -56,6 +59,10 @@ import { FinancialResolverService } from './financial/financial-resolver.service
     UserGridComponent,
     UserEditComponent,
     UserProfileComponent,
+    CompanyListComponent,
+    CompanyEditComponent,
+    CompanyFilterComponent,
+    CompanyGridComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
