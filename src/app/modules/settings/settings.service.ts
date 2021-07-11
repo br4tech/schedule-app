@@ -16,4 +16,9 @@ export class SettingsService {
     return this.httpClient.get<Office[]>('api/v1/offices').pipe(share(), delay
     (2000));
   }
+
+  getHolidays() : Observable<Holiday[]>{
+    return this.httpClient.get<Office[]>('api/v1/holidays').pipe(share(), delay
+    (2000));
+  }
 }

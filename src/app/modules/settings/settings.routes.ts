@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 
-import { LayoutComponent } from "src/app/shared/layout/layout.component";
 import { OffDayListComponent } from './off-day/off-day-list/off-day-list.component';
 import { OfficesComponent } from "./offices/offices.component";
 
