@@ -1,1 +1,59 @@
-<p>company-grid works!</p>
+<div class="card-body">
+  <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-subtable
+    datatable-loaded">
+    <table class="datatable-table" style="display: block;">
+    <thead class="datatable-head">
+      <tr class="datatable-row">
+        <th class="datatable-cell datatable-cell-sort col-lg-1" style="width:10px;">
+          <span></span>
+        </th>
+        <th class="w-default text-left" style="margin-left: 25px !important;">Nome</th>
+        <th class="w-default text-left">Telefone</th>
+        <th class="w-default text-left">Email</th>   
+        <th class="w-code text-left">Perfil</th>         
+        <th class="w-code text-left"></th>
+      </tr>
+    </thead>
+    <tbody class="datatable-body">
+      <div *ngFor="let company of companies">
+        <tr class="datatable-row datatable-row datatable-row-even datatable-row-subtable-expanded">
+          <td class="datatable-cell-center" style="width:10px;">
+            <a class="datatable-toggle-subtable" (click)="toggleShow(user.id)">
+              <i style="width: 30px;" class="fa fa-caret-down" *ngIf="isShown"></i>
+              <i style="width: 30px;" class="fa fa-caret-right" *ngIf="!isShown"></i>
+            </a>
+          </td>
+          <td class="pl-0 py-8 w-children">
+            <div class="d-flex align-items-center">                     
+              <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
+                {{ company.name }}
+                <span class="text-muted font-weight-bold d-block">{{ company.document }}</span>
+              </a>            
+            </div>
+          </td>
+          <td class="text-left w-children">
+            <span>
+            {{ company.id}
+            </span>
+          </td>
+          <td class="text-left w-children">
+            <span>
+              {{ company.id }}
+            </span>
+          </td>
+          <td class="text-left w-code">
+            <span>
+              {{ company.id }}
+            </span>
+          </td>                
+          <td class="pr-0 text-right">
+            <a routerLink="company/{{company.id }}" class="btn btn-light-success font-weight-bolder font-size-sm">
+              <i class="fa fa-pencil-square-o fa-1x"></i> Editar
+            </a>
+          </td>
+        </tr>    
+      </div>
+    </tbody>
+  </table>
+</div>
+</div>
