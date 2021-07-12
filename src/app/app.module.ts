@@ -14,10 +14,6 @@ import { AsideComponent } from './shared/layout/aside/aside.component';
 import { SubheaderComponent } from './shared/layout/subheader/subheader.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ModulesModule } from './modules/modules.module';
-import { CompanyListComponent } from './module/company/company-list/company-list.component';
-import { CompanyEditComponent } from './module/company/company-edit/company-edit.component';
-import { CompanyFilterComponent } from './module/company/components/company-filter/company-filter.component';
-import { CompanyGridComponent } from './module/company/components/company-grid/company-grid.component';
 
 registerLocaleData(localePt);
 
@@ -26,11 +22,7 @@ registerLocaleData(localePt);
     AppComponent,
     LayoutComponent,
     AsideComponent,
-    SubheaderComponent,
-    CompanyListComponent,
-    CompanyEditComponent,
-    CompanyFilterComponent,
-    CompanyGridComponent
+    SubheaderComponent
   ],
   imports: [
     BrowserAnimationsModule,
