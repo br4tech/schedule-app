@@ -11,11 +11,14 @@ import { ContractScheduleComponent } from "./schedule/contract-schedule/contract
 import { UserListComponent } from "./user/user-list/user-list.component";
 import { UserEditComponent } from "./user/user-edit/user-edit.component";
 import { UserProfileComponent } from "./user/user-profile/user-profile.component";
+import { CompanyListComponent } from "./company/company-list/company-list.component";
 
 import { DoctorResolver } from "./doctor/doctor.resolver";
 import { ScheduleResolver } from "./schedule/schedule.resolver";
 import { FinancialResolverService } from "./financial/financial-resolver.service";
 import { UserResolver } from "./user/user.resolver";
+import { CompanyEditComponent } from "./company/company-edit/company-edit.component";
+
 
 export const ROUTES: Routes = [
         {
@@ -24,15 +27,20 @@ export const ROUTES: Routes = [
                 children: [
                         { path: '', redirectTo: 'schedule', pathMatch: 'full' },
                         { path: 'schedule', component: ContractScheduleComponent, resolve: { item: ScheduleResolver } },
-                        { path: 'contract-list', component: ContractListComponent },
-                        { path: 'contract-edit', component: ContractEditComponent },
+                        { path: 'contracts', component: ContractListComponent },
+                        { path: 'contract', component: ContractEditComponent },
+                        { path: 'contract/:id', component: ContractEditComponent },
                         { path: 'bills', component: FinancialListComponent, resolve: { item: FinancialResolverService }},
-                        { path: 'doctor-list', component: DoctorListComponent, resolve: { item: DoctorResolver } },
-                        { path: 'doctor-edit', component: DoctorEditComponent },
-                        { path: 'user-list', component: UserListComponent, resolve: { item: UserResolver } },
-                        { path: 'user-list/user', component: UserEditComponent },
-                        { path: 'user-list/user/:id', component: UserEditComponent },
+                        { path: 'doctors', component: DoctorListComponent, resolve: { item: DoctorResolver } },
+                        { path: 'doctor', component: DoctorEditComponent },
+                        { path: 'doctor/:id', component: DoctorEditComponent },
+                        { path: 'users', component: UserListComponent, resolve: { item: UserResolver } },
+                        { path: 'user', component: UserEditComponent },
+                        { path: 'user/:id', component: UserEditComponent },
                         { path: 'user-profile', component: UserProfileComponent },
+                        { path: 'companies', component: CompanyListComponent },
+                        { path: 'company/:id', component: CompanyEditComponent },
+                        { path: 'company', component: CompanyEditComponent },
                         { path: 'settings', loadChildren: () => import('./settings/settings.module').then( m => m.SettingsModule )}
                 ] 
         }
