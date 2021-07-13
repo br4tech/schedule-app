@@ -18,6 +18,7 @@ import { ScheduleResolver } from "./schedule/schedule.resolver";
 import { FinancialResolverService } from "./financial/financial-resolver.service";
 import { UserResolver } from "./user/user.resolver";
 import { CompanyEditComponent } from "./company/company-edit/company-edit.component";
+import { CompanyResolver } from "./company/company.resolver";
 
 
 export const ROUTES: Routes = [
@@ -38,7 +39,7 @@ export const ROUTES: Routes = [
                         { path: 'user', component: UserEditComponent },
                         { path: 'user/:id', component: UserEditComponent },
                         { path: 'user-profile', component: UserProfileComponent },
-                        { path: 'companies', component: CompanyListComponent },
+                        { path: 'companies', component: CompanyListComponent,  resolve: { item: CompanyResolver } },
                         { path: 'company/:id', component: CompanyEditComponent },
                         { path: 'company', component: CompanyEditComponent },
                         { path: 'settings', loadChildren: () => import('./settings/settings.module').then( m => m.SettingsModule )}

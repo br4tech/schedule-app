@@ -32,6 +32,7 @@ import { UserResolver } from './user/user.resolver';
 import { DoctorResolver } from './doctor/doctor.resolver';
 import { ScheduleResolver } from './schedule/schedule.resolver';
 import { FinancialResolverService } from './financial/financial-resolver.service';
+import { CompanyResolver } from './company/company.resolver';
 
 @NgModule({
   imports: [
@@ -71,7 +72,8 @@ import { FinancialResolverService } from './financial/financial-resolver.service
     ScheduleResolver,
     FinancialResolverService,
     DoctorResolver,
-    UserResolver
+    UserResolver,
+    CompanyResolver
   ]
 })
 
