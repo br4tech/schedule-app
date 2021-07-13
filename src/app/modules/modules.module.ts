@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './modules.routes';
@@ -36,6 +37,8 @@ import { CompanyResolver } from './company/company.resolver';
 
 @NgModule({
   imports: [
+    FormsModule, 
+    ReactiveFormsModule, 
     CommonModule,
     RouterModule.forChild(ROUTES),
     CalendarModule.forRoot({
