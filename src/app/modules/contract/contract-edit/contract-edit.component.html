@@ -21,15 +21,15 @@
     </div>
     <div class="card-body">
       <div class="form-group row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Nome / Razação Social</label>
           <input class="form-control form-control-solid" formControlName="name">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Email</label>
           <input class="form-control form-control-solid" formControlName="email">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Tipo</label>
           <div class="radio-inline">
             <label class="radio radio-solid">
@@ -44,7 +44,7 @@
             </label>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>CNPJ</label>
           <input class="form-control form-control-solid" formControlName="document">
         </div>
@@ -53,25 +53,25 @@
       <div class="separator separator-dashed my-10"></div>
 
       <div class="form-group row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Cep</label>
           <input class="form-control form-control-solid"  formControlName="cep">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Rua</label>
           <input class="form-control form-control-solid" formControlName="street">
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2">
           <label>Numero</label>
           <input class="form-control form-control-solid" formControlName="number">
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4">
           <label>Complemento</label>
           <input class="form-control form-control-solid" formControlName="complement">
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Bairro</label>
           <input class="form-control form-control-solid" formControlName="neighborhood">
         </div>
@@ -81,7 +81,7 @@
             <option value="01">Selecione uma Cidade</option>
           </select>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
           <label>Estado</label>
           <select class="form-control" name="state" formControlName="state">
             <option value="01">Selecione uma Estado</option>
@@ -106,15 +106,15 @@
           </div>
           <div [formGroupName]="i">
             <div class="form-group row">
-              <div class="col-lg-5">
+              <div class="col-lg-5 col-md-5">
                 <label>Nome</label>
                 <input class="form-control form-control-solid" formControlName="doctor_name">
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-md-2">
                 <label>CPF</label>
                 <input class="form-control form-control-solid" formControlName="doctor_document">
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-2 col-md-2">
                 <label>Data Nascimento</label>
                 <div class="input-group">
                   <input type="text" class="form-control" formControlName="doctor_birthday">
@@ -125,17 +125,17 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-2 col-md-2">
                 <label>CRM</label>
                 <input class="form-control form-control-solid" formControlName="doctor_crm">
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-md-3">
                 <label>E-mail</label>
                 <input class="form-control form-control-solid" formControlName="doctor_email">
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-md-3">
                 <label>Telefone</label>
                 <div class="input-group">
                   <input type="text" class="form-control" formControlName="doctor_phone" >
@@ -146,7 +146,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-md-3">
                 <label>Celular</label>
                 <div class="input-group">
                   <input type="text" class="form-control" formControlName="doctor_celphone" >
@@ -157,7 +157,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-md-3">
                 <label>Especialidade</label>
                 <select class="form-control" name="due_at" formControlName="doctor_speciality">
                   <option value="01">Oftalmo</option>
@@ -169,7 +169,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12">
           <button class="btn btn-success btn-sm mr-3 pull-right" type="button" (click)="addDoctor()">
             <i class="fa fa-plus-circle"></i> Adicionar
           </button>
@@ -180,8 +180,8 @@
       <p class="bg-primary-o-50 text-black py-2 px-4">Dados do Contrato</p>
 
       <div class="form-group row">
-        <div class="col-lg-2">
-          <label>Data Inicio</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. Inicio</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -191,8 +191,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Data Término</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. Término</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -202,7 +202,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2">
           <label>Valor/Hora</label>
           <div class="input-group">
             <div class="input-group-append">
@@ -213,8 +213,8 @@
             <input class="form-control form-control-solid">
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Dia de Faturamento</label>
+        <div class="col-lg-2 col-md-2">
+          <label>D. de Fat.</label>
           <select class="form-control" name="due_at">
             <option value="01">01</option>
             <option value="02">02</option>
@@ -230,8 +230,8 @@
             <option value="12">12</option>
           </select>
         </div>
-        <div class="col-lg-2">
-          <label>Dia de Vencimento</label>
+        <div class="col-lg-2 col-md-2">
+          <label>D. de Venc.</label>
           <select class="form-control" name="due_at">
             <option value="01">01</option>
             <option value="02">02</option>
@@ -247,7 +247,7 @@
             <option value="12">12</option>
           </select>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2">
           <label>Multa p/ Cancel.</label>
           <div class="input-group">
             <div class="input-group-append">
@@ -264,7 +264,7 @@
       <p class="bg-primary-o-50 text-black py-2 px-4">Desconto</p>
 
       <div class="form-group row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2">
           <label>Porcentagem</label>
           <div class="input-group">
             <input type="text" class="form-control" >
@@ -275,8 +275,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Data de Inicio</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. de Inicio</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -286,8 +286,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Data de Término</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. de Término</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -297,13 +297,13 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
           <label>Observação</label>
           <input class="form-control form-control-solid">
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12">
           <a href="#" class="btn btn-success btn-sm mr-3 pull-right">
             <i class="fa fa-plus-circle"></i> Adicionar
           </a>
@@ -314,7 +314,7 @@
       <p class="bg-primary-o-50 text-black py-2 px-4">Atendimentos</p>
 
       <div class="form-group row">
-        <div class="col-lg-3">
+        <div class="col-lg-2 col-md-2">
           <label>Periodicidade</label>
           <div class="radio-inline">
             <label class="radio radio-solid">
@@ -329,8 +329,8 @@
             </label>
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Data de Inicio</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. Inicio</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -340,8 +340,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
-          <label>Data de Término</label>
+        <div class="col-lg-2 col-md-2">
+          <label>Dat. de Término</label>
           <div class="input-group">
             <input type="text" class="form-control" >
             <div class="input-group-append">
@@ -351,7 +351,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6 col-md-6">
           <label>Dias de Atendimento</label>
           <div class="checkbox-inline">
             <label class="checkbox checkbox-outline">
@@ -394,7 +394,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5">
           <label>Unidade</label>
           <select class="form-control" name="unit">
             <option value="00">Selecione uma Unidade</option>
@@ -405,7 +405,7 @@
             <option value="05">Veiga Filho</option>
           </select>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3 col-md-3">
           <label>Sala</label>
           <select class="form-control" name="office">
             <option value="01">01</option>
@@ -415,8 +415,8 @@
             <option value="05">05</option>
           </select>
         </div>
-        <div class="col-lg-2">
-          <label>Horario de Início</label>
+        <div class="col-lg-2 col">
+          <label>HR. Início</label>
           <div class="input-group date">
             <input class="form-control" id="kt_timepicker" name="time" type="text">
             <div class="input-group-append">
@@ -427,7 +427,7 @@
           </div>
         </div>
         <div class="col-lg-2">
-          <label>Horario de Término</label>
+          <label>HR. Término</label>
           <div class="input-group date">
             <input class="form-control" id="kt_timepicker" name="time" type="text">
             <div class="input-group-append">
