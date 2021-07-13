@@ -20,6 +20,12 @@ export class ContractEditComponent implements OnInit {
       doctor_phone: "",
       doctor_celphone: "",
       doctor_speciality:  "",
+    }],
+    discounts: [{
+      discount_amount: "",
+      discount_starts_at: "",
+      discount_ends_at: "",
+      discount_text: ""
     }]
   }
 
@@ -36,10 +42,12 @@ export class ContractEditComponent implements OnInit {
       neighborhood: [''],
       city: [''],
       state: [''],
-      doctors: this.fb.array([])
+      doctors: this.fb.array([]),
+      discounts: this.fb.array([])
     })
 
     this.setDoctors();
+    this.setDiscount();
    }
 
   ngOnInit(): void {
@@ -82,6 +90,40 @@ export class ContractEditComponent implements OnInit {
         doctor_phone: f.doctor_phone,
         doctor_celphone: f.doctor_celphone,
         doctor_speciality: f.doctor_speciality
+      }))
+    })
+  }
+
+  get discountFormGroups () {
+    return this.contractForm.get('discounts') as FormArray
+  }
+
+  addDiscount(){
+    let control = <FormArray>this.contractForm.controls.discounts;
+    control.push(
+      this.fb.group({
+        discount_amount: [''],
+        discount_starts_at: [''],
+        discount_ends_at: [''],
+        discount_text: [''],
+      })
+    )
+  }
+
+  deleteDiscount(index: number){
+    let control = <FormArray>this.contractForm.controls.discounts;
+    control.removeAt(index)
+  }
+
+  setDiscount(){
+    let control = <FormArray>this.contractForm.controls.discounts;
+    
+    this.data.discounts.forEach(f => {
+      control.push(this.fb.group({
+        discount_amount: f.discount_amount,
+        discount_starts_at: f.discount_starts_at,
+        discount_ends_at: f.discount_ends_at,
+        discount_text: f.discount_text,
       }))
     })
   }
