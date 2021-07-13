@@ -7,5 +7,5 @@ import { OfficesComponent } from "./offices/offices.component";
 export const ROUTES: Routes = [
         { path: 'office', component: OfficesComponent },
         { path: 'office/:id', component: OfficesComponent },
-        { path: 'off-day-list', component: OffDayListComponent,  resolve: { item: OffDayResolver } }
+        { path: 'off-days', component: OffDayListComponent,  resolve: { item: OffDayResolver } }
 ]

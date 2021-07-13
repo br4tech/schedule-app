@@ -1,0 +1,36 @@
+{
+    "companies": [
+        {
+            "id": 8,
+            "name": "PRONTO CONSULTORIO SOLUCOES MEDICAS LTDA.",
+            "document": "30.052.905/0001-76",
+            "wallet": 9,
+            "agency": 133,
+            "current_account": 6627,
+            "digit": 7,
+            "company_code": "5026911",
+            "shipping_sequence": 1052,
+            "city": "São Paulo",
+            "state": "SP",
+            "zipcode": "01423-000",
+            "address": "R Maestro Cardim, 592 5o andar",
+            "neighborhood": "Liberdade"
+        },
+        {
+            "id": 9,
+            "name": "DENSITY EMPREENDIMENTOS IMOBILIÁRIOS LTDA.",
+            "document": "12.940.625/0001-12",
+            "wallet": 9,
+            "agency": 133,
+            "current_account": 5527,
+            "digit": 2,
+            "company_code": "7902289",
+            "shipping_sequence": 4046,
+            "city": "São Paulo",
+            "state": "SP",
+            "zipcode": "01423-000",
+            "address": "Rua José Maria Lisboa 368, cj. 172 ",
+            "neighborhood": "Jardim Paulista"
+        }
+    ]
+}

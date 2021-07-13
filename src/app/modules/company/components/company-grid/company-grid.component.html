@@ -1,0 +1,47 @@
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-head-custom table-vertical-center table-head-bg table-borderless">
+    <thead>
+      <tr>      
+        <th class="text-left">Nome</th>
+        <th class="text-left">Conta</th>
+        <th class="text-left">Nº Empresa</th>   
+        <th class="text-left">Sequência</th>         
+        <th class="text-left"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let company of companies">      
+        <td class="pl-0 py-8">
+          <div class="d-flex align-items-center">                     
+            <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
+              {{ company.name }}
+              <span class="text-muted font-weight-bold d-block">{{ company.document }}</span>
+            </a>            
+          </div>
+        </td>
+        <td class="text-left">
+          <span>
+            Agência: {{ company.agency}} conta: {{ company.current_account}} - {{ company.digit}}
+          </span>
+        </td>
+        <td class="text-left">
+          <span>
+            {{ company.company_code}}
+          </span>
+        </td>
+        <td class="text-left">
+          <span>
+            {{ company.shipping_sequence }}
+          </span>
+        </td>                
+        <td class="pr-0 text-right">
+          <a routerLink="company/{{company.id }}" class="btn btn-light-success font-weight-bolder font-size-sm">
+            <i class="fa fa-pencil-square-o fa-1x"></i> Editar
+          </a>
+        </td>
+      </tr>     
+    </tbody>
+  </table>
+</div>
+</div>
