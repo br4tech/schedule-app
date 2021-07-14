@@ -11,6 +11,17 @@ export class ContractEditComponent implements OnInit {
   contractForm: FormGroup;
 
   data = {
+    name: "",
+    email: "",
+    person: "",
+    document: "",
+    cep: "",
+    street: "",
+    number: "",
+    complement: "",
+    neighborhood: "",
+    city: "",
+    state: "",
     doctors: [{
       doctor_name: "",
       doctor_document: "",
@@ -26,6 +37,16 @@ export class ContractEditComponent implements OnInit {
       discount_starts_at: "",
       discount_ends_at: "",
       discount_text: ""
+    }],
+    attendances:[{
+      attendance_kind: "",
+      attendance_starts_at: "",
+      attendance_ends_at: "",
+      attendance_days: "",
+      attendance_unit: "",
+      attendance_office: "",
+      attendance_time_start: "",
+      attendance_time_and:""
     }]
   }
 
@@ -38,16 +59,18 @@ export class ContractEditComponent implements OnInit {
       cep: [''],
       street: [''],
       number: [''],
-      complemen: [''],
+      complement: [''],
       neighborhood: [''],
       city: [''],
       state: [''],
-      doctors: this.fb.array([]),
-      discounts: this.fb.array([])
+      doctors: this.fb.array([]),    
+      discounts: this.fb.array([]),
+      attendances: this.fb.array([])
     })
 
     this.setDoctors();
-    this.setDiscount();
+    this.setDiscounts();
+    this.setAttendances();
    }
 
   ngOnInit(): void {
@@ -80,6 +103,7 @@ export class ContractEditComponent implements OnInit {
 
   setDoctors(){
     let control = <FormArray>this.contractForm.controls.doctors;
+
     this.data.doctors.forEach(f => {
       control.push(this.fb.group({
         doctor_name: f.doctor_name,
@@ -115,7 +139,7 @@ export class ContractEditComponent implements OnInit {
     control.removeAt(index)
   }
 
-  setDiscount(){
+  setDiscounts(){
     let control = <FormArray>this.contractForm.controls.discounts;
     
     this.data.discounts.forEach(f => {
@@ -124,6 +148,48 @@ export class ContractEditComponent implements OnInit {
         discount_starts_at: f.discount_starts_at,
         discount_ends_at: f.discount_ends_at,
         discount_text: f.discount_text,
+      }))
+    })
+  }
+
+  get attendanceFormGroups () {
+    return this.contractForm.get('attendances') as FormArray
+  }
+
+  addAttendance(){
+    let control = <FormArray>this.contractForm.controls.attendances;
+    control.push(
+      this.fb.group({
+        attendance_kind: [''],
+        attendance_starts_at: [''],
+        attendance_ends_at: [''],
+        attendance_days: [''],
+        attendance_unit: [''],
+        attendance_office: [''],
+        attendance_time_start: [''],
+        attendance_time_and: ['']
+      })
+    )
+  }
+
+  deleteAttendance(index: number){
+    let control = <FormArray>this.contractForm.controls.attendances;
+    control.removeAt(index)
+  }
+
+  setAttendances(){
+    let control = <FormArray>this.contractForm.controls.attendances;
+
+    this.data.attendances.forEach(f =>{
+      control.push(this.fb.group({
+        attendance_kind: f.attendance_kind,
+        attendance_starts_at: f.attendance_starts_at,
+        attendance_ends_at: f.attendance_ends_at,
+        attendance_days: f.attendance_days,
+        attendance_unit: f.attendance_unit,
+        attendance_office: f.attendance_office,
+        attendance_time_start: f.attendance_time_start,
+        attendance_time_and: f.attendance_time_and
       }))
     })
   }
