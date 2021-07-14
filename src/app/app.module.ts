@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt-PT';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ReportModule } from './modules/report/reporte.module';
 
@@ -27,6 +28,8 @@ registerLocaleData(localePt);
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    FormsModule, 
+    ReactiveFormsModule, 
     NgxUiLoaderModule,
     AppRoutingModule,
     HttpClientModule,
