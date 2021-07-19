@@ -15,6 +15,7 @@ import { AsideComponent } from './shared/layout/aside/aside.component';
 import { SubheaderComponent } from './shared/layout/subheader/subheader.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ModulesModule } from './modules/modules.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt);
 
@@ -34,7 +35,8 @@ registerLocaleData(localePt);
     AppRoutingModule,
     HttpClientModule,
     ModulesModule,    
-    ReportModule
+    ReportModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

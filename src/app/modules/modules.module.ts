@@ -34,6 +34,8 @@ import { DoctorResolver } from './doctor/doctor.resolver';
 import { ScheduleResolver } from './schedule/schedule.resolver';
 import { FinancialResolverService } from './financial/financial-resolver.service';
 import { CompanyResolver } from './company/company.resolver';
+import { ModalCancelAttendanceComponent } from './contract/components/modal-cancel-attendance/modal-cancel-attendance.component';
+import { ModalCancelContractComponent } from './contract/components/modal-cancel-contract/modal-cancel-contract.component';
 
 @NgModule({
   imports: [
@@ -66,7 +68,9 @@ import { CompanyResolver } from './company/company.resolver';
     CompanyListComponent,
     CompanyEditComponent,
     CompanyFilterComponent,
-    CompanyGridComponent
+    CompanyGridComponent,
+    ModalCancelAttendanceComponent,
+    ModalCancelContractComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
