@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-
 @Component({
   selector: 'app-contract-edit',
   templateUrl: './contract-edit.component.html',
   styleUrls: ['./contract-edit.component.scss']
 })
 export class ContractEditComponent implements OnInit {
+
+  @ViewChild('ModalCancelAttendanceComponent') openModalAttendance: any;
 
   contractForm: FormGroup;
 
@@ -50,7 +51,9 @@ export class ContractEditComponent implements OnInit {
     }]
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder  
+    ) {
     this.contractForm = this.fb.group({
       name: [''],
       email: [''],
@@ -192,5 +195,10 @@ export class ContractEditComponent implements OnInit {
         attendance_time_and: f.attendance_time_and
       }))
     })
+  }
+
+  openModal(){
+    debugger
+    this.openModalAttendance.open('')
   }
 }

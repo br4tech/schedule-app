@@ -89,8 +89,7 @@
         </div>
       </div>
 
-      <div class="separator separator-dashed my-10"></div>
-      <p class="bg-primary-o-50 text-black py-2 px-4">Medicos</p>
+      <p class="bg-primary text-white py-2 px-4">Medicos</p>
 
       <div formArrayName="doctors">
         <div *ngFor="let doctor of doctorFormGroups.controls; let i=index">
@@ -178,7 +177,7 @@
       </div>
 
       <div class="separator separator-dashed my-10"></div>
-      <p class="bg-primary-o-50 text-black py-2 px-4">Dados do Contrato</p>
+      <p class="bg-primary text-white py-2 px-4">Dados do Contrato</p>
 
       <div class="form-group row">
         <div class="col-lg-2 col-md-2">
@@ -262,7 +261,7 @@
       </div>
 
       <div class="separator separator-dashed my-10"></div>
-      <p class="bg-primary-o-50 text-black py-2 px-4">Desconto</p>
+      <p class="bg-primary text-white  py-2 px-4">Desconto</p>
 
       <div formArrayName="discounts">
         <div *ngFor="let discount of discountFormGroups.controls; let i = index">
@@ -328,8 +327,7 @@
         </div>
       </div>
 
-      <div class="separator separator-dashed my-10"></div>
-      <p class="bg-primary-o-50 text-black py-2 px-4">Atendimentos</p>
+      <p class="bg-primary text-white  py-2 px-4">Atendimentos</p>
 
       <div formArrayName="attendances">
         <div *ngFor="let attendance of attendanceFormGroups.controls; let i=index">
@@ -339,7 +337,7 @@
               <span class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">
                 Atendimento {{ i+1 }}
               </span>
-              <button class="btn btn-warning btn-sm mr-3 pull-right" type="button">
+              <button class="btn btn-warning btn-sm mr-3 pull-right" type="button" (click)="modalAttendance.open()">
                 <i class="fa fa-pause-circle"></i>
               </button>
               <button class="btn btn-danger btn-sm mr-3 pull-right" type="button" (click)="deleteAttendance(i)">
@@ -484,8 +482,7 @@
         </div>
       </div>
 
-      <div class="separator separator-dashed my-10"></div>
-      <p class="bg-primary-o-80 text-black py-2 px-4">Estacionamento</p>
+      <p class="bg-primary text-white  py-2 px-4">Estacionamento</p>
 
       <div class="form-group row">
         <div class="col-lg-3">
@@ -542,3 +539,5 @@
     </div>
   </div>
 </form>
+
+<app-modal-cancel-attendance #modalAttendance hidden="true"></app-modal-cancel-attendance>
