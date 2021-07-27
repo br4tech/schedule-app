@@ -1,4 +1,4 @@
-<form [formGroup]="contractForm">
+<form [formGroup]="contractForm" (ngSubmit)="onSubmit()" >
   <div class="card card-custom gutter-b example example-compact">
     <div class="card-header">
       <h3 class="card-title">Novo Contrato</h3>
@@ -33,19 +33,19 @@
           <label>Tipo</label>
           <div class="radio-inline">
             <label class="radio radio-solid">
-              <input type="radio" name="person" checked="checked" value="1" formControlName="person">
+              <input type="radio" formControlName="person" checked="checked"  value="0" (change)="personType()">
               <span></span>
               Pessoa Juridica
             </label>
             <label class="radio radio-solid">
-              <input type="radio" name="person" value="2" formControlName="person">
+              <input type="radio" formControlName="person" value="1" (change)="personType()">
               <span></span>
               Pessoa Fisica
             </label>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
-          <label>CNPJ</label>
+          <label>{{ person_type }}</label>
           <input class="form-control form-control-solid" formControlName="document">
         </div>
       </div>
@@ -202,17 +202,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2">
-          <label>Valor/Hora</label>
-          <div class="input-group">
-            <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-dollar"></i>
-              </span>
-            </div>
-            <input class="form-control form-control-solid">
-          </div>
-        </div>
+
+  
         <div class="col-lg-2 col-md-2">
           <label>D. de Fat.</label>
           <select class="form-control" name="due_at">
@@ -427,7 +418,7 @@
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-lg-5 col-md-5">
+              <div class="col-lg-3 col-md-3">
                 <label>Unidade</label>
                 <select class="form-control" formControlName="attendance_unit">
                   <option value="00">Selecione uma Unidade</option>
@@ -447,6 +438,17 @@
                   <option value="04">04</option>
                   <option value="05">05</option>
                 </select>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <label>Valor/Hora</label>
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fa fa-dollar"></i>
+                    </span>
+                  </div>
+                  <input class="form-control form-control-solid">
+                </div>
               </div>
               <div class="col-lg-2 col">
                 <label>HR. Início</label>

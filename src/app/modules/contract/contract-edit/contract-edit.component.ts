@@ -10,6 +10,7 @@ export class ContractEditComponent implements OnInit {
   @ViewChild('ModalCancelAttendanceComponent') openModalAttendance: any;
 
   contractForm: FormGroup;
+  person_type: string = "Pessoa Juridica"
 
   data = {
     name: "",
@@ -77,10 +78,19 @@ export class ContractEditComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  }
+  }   
 
   get doctorFormGroups () {
     return this.contractForm.get('doctors') as FormArray
+  }
+
+  personType(){
+    debugger;
+    if (this.contractForm.controls.person.value == "0"){
+      this.person_type ="CNPJ"
+    }else{
+      this.person_type ="CPF"
+    }
   }
 
   addDoctor(){
@@ -198,7 +208,11 @@ export class ContractEditComponent implements OnInit {
   }
 
   openModal(){
-    debugger
     this.openModalAttendance.open('')
   }
+
+  onSubmit() {
+   console.log(this.contractForm.value);
+  }
+
 }
