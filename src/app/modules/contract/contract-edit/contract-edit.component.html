@@ -1,4 +1,4 @@
-<form [formGroup]="contractForm" (ngSubmit)="onSubmit()" >
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
   <div class="card card-custom gutter-b example example-compact">
     <div class="card-header">
       <h3 class="card-title">Novo Contrato</h3>
@@ -6,7 +6,7 @@
         <div class="example-tools justify-content-center">
           <div class="radio-inline">
             <label class="radio radio-solid">
-              <input type="radio" name="example_1" checked="checked" value="1">
+              <input type="radio" name="example_1" checked="checked" value="1">              
               <span></span>
               Contrato Density
             </label>
@@ -20,33 +20,34 @@
       </div>
     </div>
     <div class="card-body">
-      <div class="form-group row">
+      <div class="row">
         <div class="col-lg-3 col-md-3">
-          <label>Nome / Razação Social</label>
-          <input class="form-control form-control-solid" formControlName="name">
+          <div class="form-group">
+            <label>Nome / Razação Social</label>
+            <input class="form-control form-control-solid" [ngClass]="applyCssError('name')" formControlName="name">  
+          </div>       
         </div>
         <div class="col-lg-3 col-md-3">
-          <label>Email</label>
-          <input class="form-control form-control-solid" formControlName="email">
+          <div class="form-group">
+            <label>Email</label>
+            <input class="form-control form-control-solid" [ngClass]="applyCssError('email')" formControlName="email">
+          </div>
         </div>
         <div class="col-lg-3 col-md-3">
           <label>Tipo</label>
           <div class="radio-inline">
-            <label class="radio radio-solid">
-              <input type="radio" formControlName="person" checked="checked"  value="0" (change)="personType()">
-              <span></span>
-              Pessoa Juridica
-            </label>
-            <label class="radio radio-solid">
-              <input type="radio" formControlName="person" value="1" (change)="personType()">
-              <span></span>
-              Pessoa Fisica
-            </label>
+            <div *ngFor="let item of PERSON_LIST; let i=index">
+              <label class="radio radio-solid">
+                <span></span>
+                {{item.name}}          
+                <input type="radio" [value]="item.value" [checked]="item.checked" (change)="personType()" formControlName="person" />
+              </label>
+            </div>         
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
           <label>{{ person_type }}</label>
-          <input class="form-control form-control-solid" formControlName="document">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('document')" formControlName="document">
         </div>
       </div>
 
@@ -55,35 +56,35 @@
       <div class="form-group row">
         <div class="col-lg-3 col-md-3">
           <label>Cep</label>
-          <input class="form-control form-control-solid"  formControlName="cep">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('cep')"  formControlName="cep">
         </div>
         <div class="col-lg-3 col-md-3">
           <label>Rua</label>
-          <input class="form-control form-control-solid" formControlName="street">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('street')" formControlName="street">
         </div>
         <div class="col-lg-2 col-md-2">
           <label>Numero</label>
-          <input class="form-control form-control-solid" formControlName="number">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('number')" formControlName="number">
         </div>
         <div class="col-lg-4 col-md-4">
           <label>Complemento</label>
-          <input class="form-control form-control-solid" formControlName="complement">
+          <input class="form-control form-control-solid"  formControlName="complement">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-lg-3 col-md-3">
           <label>Bairro</label>
-          <input class="form-control form-control-solid" formControlName="neighborhood">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('neighborhood')" formControlName="neighborhood">
         </div>
         <div class="col-lg-3">
           <label>Cidade</label>
-          <select class="form-control" name="city" formControlName="city">
+          <select class="form-control" name="city" [ngClass]="applyCssError('city')" formControlName="city">
             <option value="01">Selecione uma Cidade</option>
           </select>
         </div>
         <div class="col-lg-3 col-md-3">
           <label>Estado</label>
-          <select class="form-control" name="state" formControlName="state">
+          <select class="form-control" name="state" [ngClass]="applyCssError('state')" formControlName="state">
             <option value="01">Selecione uma Estado</option>
           </select>
         </div>
@@ -108,16 +109,16 @@
             <div class="form-group row">
               <div class="col-lg-5 col-md-5">
                 <label>Nome</label>
-                <input class="form-control form-control-solid" formControlName="doctor_name">
+                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_name', i )" formControlName="doctor_name">
               </div>
               <div class="col-lg-3 col-md-2">
                 <label>CPF</label>
-                <input class="form-control form-control-solid" formControlName="doctor_document">
+                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_document', i )" formControlName="doctor_document">
               </div>
               <div class="col-lg-2 col-md-2">
-                <label>Data Nascimento</label>
+                <label>Dt. Nasc.</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="doctor_birthday">
+                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('doctors','doctor_birthday', i )" formControlName="doctor_birthday">
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-calendar"></i>
@@ -127,18 +128,18 @@
               </div>
               <div class="col-lg-2 col-md-2">
                 <label>CRM</label>
-                <input class="form-control form-control-solid" formControlName="doctor_crm">
+                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_crm', i )" formControlName="doctor_crm">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-lg-3 col-md-3">
                 <label>E-mail</label>
-                <input class="form-control form-control-solid" formControlName="doctor_email">
+                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_email', i )" formControlName="doctor_email">
               </div>
               <div class="col-lg-3 col-md-3">
                 <label>Telefone</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="doctor_phone" >
+                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('doctors','doctor_phone', i )" formControlName="doctor_phone" >
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-phone"></i>
@@ -159,7 +160,7 @@
               </div>
               <div class="col-lg-3 col-md-3">
                 <label>Especialidade</label>
-                <select class="form-control" name="due_at" formControlName="doctor_speciality">
+                <select class="form-control" name="due_at" [ngClass]="applyCssErrorToArray('doctors','doctor_speciality', i )" formControlName="doctor_speciality">
                   <option value="01">Oftalmo</option>
                   <option value="02">Cardiologista</option>
                 </select>
