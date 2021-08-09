@@ -16,6 +16,7 @@ import { SubheaderComponent } from './shared/layout/subheader/subheader.componen
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ModulesModule } from './modules/modules.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
 
 registerLocaleData(localePt);
 
@@ -24,7 +25,8 @@ registerLocaleData(localePt);
     AppComponent,
     LayoutComponent,
     AsideComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserAnimationsModule,
