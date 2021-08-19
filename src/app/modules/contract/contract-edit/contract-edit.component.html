@@ -184,7 +184,7 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Inicio</label>
           <div class="input-group">
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" [ngClass]="applyCssError('start_at')" formControlName="start_at" >
             <div class="input-group-append">
               <span class="input-group-text">
                 <i class="fa fa-calendar"></i>
@@ -195,7 +195,7 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Término</label>
           <div class="input-group">
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" [ngClass]="applyCssError('end_at')" formControlName="end+at" >
             <div class="input-group-append">
               <span class="input-group-text">
                 <i class="fa fa-calendar"></i>
@@ -207,7 +207,7 @@
   
         <div class="col-lg-2 col-md-2">
           <label>D. de Fat.</label>
-          <select class="form-control" name="due_at">
+          <select class="form-control" [ngClass]="applyCssError('revenues_at')" formControlName="revenues_at">
             <option value="01">01</option>
             <option value="02">02</option>
             <option value="03">03</option>
@@ -224,7 +224,7 @@
         </div>
         <div class="col-lg-2 col-md-2">
           <label>D. de Venc.</label>
-          <select class="form-control" name="due_at">
+          <select class="form-control" [ngClass]="applyCssError('due_at')" formControlName="due_at">
             <option value="01">01</option>
             <option value="02">02</option>
             <option value="03">03</option>
@@ -247,7 +247,7 @@
                 <i class="fa fa-dollar"></i>
               </span>
             </div>
-            <input class="form-control form-control-solid">
+            <input class="form-control form-control-solid" [ngClass]="applyCssError('forfeit')" formControlName="forfeit">
           </div>
         </div>
       </div>
@@ -357,7 +357,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. Inicio</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="attendance_starts_at" >
+                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_starts_at', i )" formControlName="attendance_starts_at" >
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-calendar"></i>
@@ -368,7 +368,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="attendance_ends_at" >
+                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_ends_at', i )" formControlName="attendance_ends_at" >
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-calendar"></i>
@@ -379,49 +379,21 @@
               <div class="col-lg-6 col-md-6">
                 <label>Dias de Atendimento</label>
                 <div class="checkbox-inline">
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox" formControlName="attendance_days">
-                    <span>
-                    </span>
-                    Seg
-                  </label>
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox">
-                    <span>
-                    </span>
-                    Ter
-                  </label>
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox">
-                    <span>
-                    </span>
-                    Qua
-                  </label>
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox">
-                    <span>
-                    </span>
-                    Qui
-                  </label>
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox">
-                    <span>
-                    </span>
-                    Sext
-                  </label>
-                  <label class="checkbox checkbox-outline">
-                    <input type="checkbox">
-                    <span>
-                    </span>
-                    Sab
-                  </label>
+                  <div *ngFor="let item of DAYS_WEEK; let y=index">
+                    <label class="checkbox checkbox-outline">
+                      <input type="checkbox" (change)="onChange(item.name, $event, i)" formControlName="attendance_days">
+                      <span>
+                      </span>
+                      {{ item.name }}
+                    </label>     
+                  </div>            
                 </div>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-lg-3 col-md-3">
                 <label>Unidade</label>
-                <select class="form-control" formControlName="attendance_unit">
+                <select class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_unit', i )" formControlName="attendance_unit">
                   <option value="00">Selecione uma Unidade</option>
                   <option value="01">Pinheiros</option>
                   <option value="02">Cardeal Arcoverde</option>
@@ -432,7 +404,7 @@
               </div>
               <div class="col-lg-3 col-md-3">
                 <label>Sala</label>
-                <select class="form-control" formControlName="attendance_office">
+                <select class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_office', i )" formControlName="attendance_office">
                   <option value="01">01</option>
                   <option value="02">02</option>
                   <option value="03">03</option>
@@ -448,7 +420,7 @@
                       <i class="fa fa-dollar"></i>
                     </span>
                   </div>
-                  <input class="form-control form-control-solid">
+                  <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('attendances','attendance_value', i )" formControlName="attendance_value">
                 </div>
               </div>
               <div class="col-lg-2 col">

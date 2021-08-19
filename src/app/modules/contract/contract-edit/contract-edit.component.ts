@@ -27,6 +27,11 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
     neighborhood: "",
     city: "",
     state: "",
+    start_at: "",
+    end_at: "",
+    due_at: "",
+    revenues_at: "",
+    forfeit: "",
     doctors: [{
       doctor_name: "",
       doctor_document: "",
@@ -50,6 +55,7 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
       attendance_days: "",
       attendance_unit: "",
       attendance_office: "",
+      attendance_value: "",
       attendance_time_start: "",
       attendance_time_and:""
     }]
@@ -58,6 +64,15 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   PERSON_LIST = [
     { name: 'Pessoa Juridica', value: '0', checked: true,  },
     { name: 'Pessoa Fisica', value: '1', checked: false }
+  ]
+
+  DAYS_WEEK = [
+   {  name: 'Seg', value: '1' },
+   {  name: 'Ter', value: '2' },
+   {  name: 'Qua', value: '3' },
+   {  name: 'Qui', value: '4' },
+   {  name: 'Sex', value: '5' },
+   {  name: 'Sab', value: '6' }
   ]
 
   constructor(
@@ -85,9 +100,14 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
       neighborhood: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
+      start_at: ['', Validators.required],
+      end_at: ['', Validators.required],
+      due_at: ['', Validators.required],
+      revenues_at: ['', Validators.required],
+      forfeit:  ['', Validators.required],
       doctors: this.fb.array([], Validators.required),    
       discounts: this.fb.array([]),
-      attendances: this.fb.array([])
+      attendances: this.fb.array([], Validators.required)
     })
 
     this.setDoctors();
@@ -191,14 +211,15 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
     let control = <FormArray>this.formulario.controls.attendances;
     control.push(
       this.fb.group({
-        attendance_kind: [''],
-        attendance_starts_at: [''],
-        attendance_ends_at: [''],
-        attendance_days: [''],
-        attendance_unit: [''],
-        attendance_office: [''],
-        attendance_time_start: [''],
-        attendance_time_and: ['']
+        attendance_kind: ['', Validators.required],
+        attendance_starts_at: ['',  [Validators.required]],
+        attendance_ends_at: ['', [Validators.required]],
+        attendance_days: this.fb.array([], Validators.required),
+        attendance_unit: ['', [Validators.required]],
+        attendance_office: ['', [Validators.required]],
+        attendance_value: ['', [Validators.required]],
+        attendance_time_start: ['',[Validators.required]],
+        attendance_time_and: ['',  [Validators.required]]
       })
     )
   }
@@ -213,16 +234,32 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
 
     this.data.attendances.forEach(f =>{
       control.push(this.fb.group({
-        attendance_kind: f.attendance_kind,
-        attendance_starts_at: f.attendance_starts_at,
-        attendance_ends_at: f.attendance_ends_at,
-        attendance_days: f.attendance_days,
-        attendance_unit: f.attendance_unit,
-        attendance_office: f.attendance_office,
-        attendance_time_start: f.attendance_time_start,
-        attendance_time_and: f.attendance_time_and
+        attendance_kind: [f.attendance_kind, Validators.required],
+        attendance_starts_at: [f.attendance_starts_at,  Validators.required],
+        attendance_ends_at: [f.attendance_ends_at, Validators.required],
+        attendance_days: [f.attendance_days, Validators.required],
+        attendance_unit: [f.attendance_unit,  Validators.required],
+        attendance_office: [f.attendance_office,  Validators.required],
+        attendance_value: [f.attendance_value, Validators.required],
+        attendance_time_start: [f.attendance_time_start,  Validators.required],
+        attendance_time_and: [f.attendance_time_and,  Validators.required]
       }))
     })
+  }
+
+  onChange(name: string, isChecked: any, index: number) {
+    debugger;
+    let controlDays = <FormArray>this.formulario.controls.attendances.get('attendance_days')
+    // let controlDays = <FormArray>controlAttendances[]
+
+    if (isChecked) {
+     controlDays.push(this.fb.group({
+       day: name
+     }));
+    } else {
+      const index = controlDays.controls.findIndex(x => x.value === name);
+      controlDays.removeAt(index);
+    }
   }
 
   openModal(){
