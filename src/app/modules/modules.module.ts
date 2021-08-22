@@ -36,19 +36,27 @@ import { FinancialResolverService } from './financial/financial-resolver.service
 import { CompanyResolver } from './company/company.resolver';
 import { ModalCancelAttendanceComponent } from './contract/components/modal-cancel-attendance/modal-cancel-attendance.component';
 import { ModalCancelContractComponent } from './contract/components/modal-cancel-contract/modal-cancel-contract.component';
+import { ReservationWithCotractComponent } from './schedule/components/reservation-with-cotract/reservation-with-cotract.component';
+import { ReservationWithoutCotractComponent } from './schedule/components/reservation-without-cotract/reservation-without-cotract.component';
+
+import { BaseModalComponent } from '../shared/components/modal/base-modal/base-modal.component';
+import { ModalService } from '../shared/components/modal/modal.service';
+import { InnerContentDirective } from '../shared/components/modal/inner-content.directive';
+import { ModalModule } from '../shared/components/modal/modal.module';
 
 @NgModule({
   imports: [
     FormsModule, 
     ReactiveFormsModule, 
     CommonModule,
+    ModalModule,
     RouterModule.forChild(ROUTES),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     })
   ],
-  declarations: [
+  declarations: [   
     ContractScheduleComponent,
     ContractListComponent,
     ContractEditComponent,
@@ -70,17 +78,24 @@ import { ModalCancelContractComponent } from './contract/components/modal-cancel
     CompanyFilterComponent,
     CompanyGridComponent,
     ModalCancelAttendanceComponent,
-    ModalCancelContractComponent
+    ModalCancelContractComponent,
+    ReservationWithCotractComponent,
+    ReservationWithoutCotractComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
+  ],
+  entryComponents:[
+    BaseModalComponent
   ],
   providers:[
     ScheduleResolver,
     FinancialResolverService,
     DoctorResolver,
     UserResolver,
-    CompanyResolver
+    CompanyResolver,
+    ModalService,
+    InnerContentDirective 
   ]
 })
 

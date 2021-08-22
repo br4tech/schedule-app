@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ContractEditComponent } from 'src/app/modules/contract/contract-edit/contract-edit.component';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
+import { ModalService } from '../../components/modal/modal.service';
+import { Contract } from '../../models/contract';
 
 @Component({
   selector: 'app-aside',
@@ -13,7 +16,8 @@ export class AsideComponent implements OnInit {
 
   constructor(
     private settingsService: SettingsService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private modalService: ModalService
     ) { }
 
   ngOnInit(): void {
@@ -26,5 +30,14 @@ export class AsideComponent implements OnInit {
       this.offices = data.offices; 
       this.ngxService.stop();   
     });
+  }
+
+  reservationWithContract(){
+    let contract: Contract
+    this.modalService.openReservationWithContract(contract)
+  }
+
+  reservationWithOutContract(){
+    this.modalService.openReservationWithOutContract()
   }
 }

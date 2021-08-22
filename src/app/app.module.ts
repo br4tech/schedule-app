@@ -26,7 +26,7 @@ registerLocaleData(localePt);
     LayoutComponent,
     AsideComponent,
     SubheaderComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent    
   ],
   imports: [
     BrowserAnimationsModule,
@@ -36,11 +36,13 @@ registerLocaleData(localePt);
     NgxUiLoaderModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
     ModulesModule,    
-    ReportModule,
-    NgbModule
+    ReportModule
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
