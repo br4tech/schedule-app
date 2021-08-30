@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-4 col-md-4">
+    <label>Tipo</label>
+    <div class="radio-inline">
+      <div *ngFor="let item of PERSON_LIST; let i=index">
+        <label class="radio radio-solid">
+          <span></span>
+          {{item.name}}          
+          <input type="radio" [value]="item.value" [checked]="item.checked" (change)="personType()"/>
+        </label>
+      </div>         
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-8">
+    <label>{{ person_type }}</label>
+    <input class="form-control form-control-solid">
+  </div>
+</div>
+

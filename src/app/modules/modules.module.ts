@@ -44,6 +44,9 @@ import { ModalService } from '../shared/components/modal/modal.service';
 import { InnerContentDirective } from '../shared/components/modal/inner-content.directive';
 import { ModalModule } from '../shared/components/modal/modal.module';
 
+import { LegalEntitiesComponent } from '../shared/components/legal-entities/legal-entities.component';
+import { BranchUnitiesComponent } from '../shared/components/branch-unities/branch-unities.component';
+
 @NgModule({
   imports: [
     FormsModule, 
@@ -81,6 +84,8 @@ import { ModalModule } from '../shared/components/modal/modal.module';
     ModalCancelContractComponent,
     ReservationWithCotractComponent,
     ReservationWithoutCotractComponent,
+    LegalEntitiesComponent,
+    BranchUnitiesComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -26,7 +26,7 @@ registerLocaleData(localePt);
     LayoutComponent,
     AsideComponent,
     SubheaderComponent,
-    ErrorMessageComponent    
+    ErrorMessageComponent,  
   ],
   imports: [
     BrowserAnimationsModule,
