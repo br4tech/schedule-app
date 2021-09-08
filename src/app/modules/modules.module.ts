@@ -46,6 +46,10 @@ import { ModalModule } from '../shared/components/modal/modal.module';
 
 import { LegalEntitiesComponent } from '../shared/components/legal-entities/legal-entities.component';
 import { BranchUnitiesComponent } from '../shared/components/branch-unities/branch-unities.component';
+import { OffDayResolver } from './settings/off-day/off-day.resolver';
+import { NgbDatepickerI18n, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomDatepickerI18nService } from '../shared/helpers/custom-datepicker-i18n.service';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -57,7 +61,9 @@ import { BranchUnitiesComponent } from '../shared/components/branch-unities/bran
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
-    })
+    }),
+    NgbDatepickerModule,
+    NgxMaskModule.forRoot(),
   ],
   declarations: [   
     ContractScheduleComponent,
@@ -99,8 +105,10 @@ import { BranchUnitiesComponent } from '../shared/components/branch-unities/bran
     DoctorResolver,
     UserResolver,
     CompanyResolver,
+    OffDayResolver,   
     ModalService,
-    InnerContentDirective 
+    InnerContentDirective,
+    { provide: NgbDatepickerI18n, useClass: CustomDatepickerI18nService }
   ]
 })
 

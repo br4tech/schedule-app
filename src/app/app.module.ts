@@ -17,6 +17,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ModulesModule } from './modules/modules.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 registerLocaleData(localePt);
 
@@ -26,7 +27,7 @@ registerLocaleData(localePt);
     LayoutComponent,
     AsideComponent,
     SubheaderComponent,
-    ErrorMessageComponent,  
+    ErrorMessageComponent    
   ],
   imports: [
     BrowserAnimationsModule,
