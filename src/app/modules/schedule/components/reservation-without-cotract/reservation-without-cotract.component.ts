@@ -11,10 +11,6 @@ import { Office } from 'src/app/shared/models/office';
   selector: 'app-reservation-without-cotract',
   templateUrl: './reservation-without-cotract.component.html',
   styleUrls: ['./reservation-without-cotract.component.scss'],
-  providers: [
-    { provide: NgbDateParserFormatter, useClass: CustomDatepickerFormatService },
-    I18n,{provide: NgbDatepickerI18n, useClass: CustomDatepickerI18nService}
-  ]
 })
 export class ReservationWithoutCotractComponent implements OnInit {
   form: FormGroup;

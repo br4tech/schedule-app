@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form>
   <div class="card card-custom gutter-b example example-compact">
     <div class="card-body">
       <div class="row">
@@ -7,6 +7,7 @@
             <label>Contrato</label>
             <select class="form-control">
               <option value="01">Selecione uma Contrato</option>
+              <option *ngFor="let contract of contracts" [value]="contract.id">{{ contract.client.name }}</option>    
             </select> 
           </div>       
         </div>
@@ -15,25 +16,34 @@
         <div class="col-lg-8 col-md-8">
           <div class="form-group">
             <label>Unidade</label>
-            <select class="form-control">
-              <option value="01">Selecione uma Unidade</option>
+            <select class="form-control" (change)="onChangeUnit($event.target)">
+              <option value="00">Selecione uma Unidade</option>
+              <option *ngFor="let unit of units" [value]="unit.id">{{ unit.name }}</option>               
             </select> 
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
-          <div class="form-group">
+             <div class="form-group">
             <label>Sala</label>
             <select class="form-control">
-              <option value="01">Selecione uma Sala</option>
+              <option value="00">Selecione uma Sala</option>
+              <option *ngFor="let office of offices" [value]="office.id">{{ office.code }}</option>
             </select> 
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 col-md-6">
-          <div class="form-group">
+           <div class="form-group">
             <label>Data</label>
-            <input class="form-control form-control-solid">  
+            <div class="input-group">
+              <input id="dateOfBirth" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                   <i class="fa fa-calendar"></i>
+                </button>
+              </div>
+            </div>            
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
