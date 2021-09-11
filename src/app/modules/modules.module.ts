@@ -47,7 +47,7 @@ import { ModalModule } from '../shared/components/modal/modal.module';
 import { LegalEntitiesComponent } from '../shared/components/legal-entities/legal-entities.component';
 import { BranchUnitiesComponent } from '../shared/components/branch-unities/branch-unities.component';
 import { OffDayResolver } from './settings/off-day/off-day.resolver';
-import { NgbDateParserFormatter, NgbDatepickerI18n, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDatepickerI18n, NgbDatepickerModule, NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomDatepickerI18nService } from '../shared/helpers/custom-datepicker-i18n.service';
 import { NgxMaskModule } from 'ngx-mask';
 import { CustomDatepickerFormatService } from '../shared/helpers/custom-datepicker-format.service';
@@ -64,6 +64,7 @@ import { CustomDatepickerFormatService } from '../shared/helpers/custom-datepick
       useFactory: adapterFactory,
     }),
     NgbDatepickerModule,
+    NgbTimepickerModule,
     NgxMaskModule.forRoot(),
   ],
   declarations: [   

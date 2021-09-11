@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
-import { NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
+import { NgbCalendar, NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
+import { getDay } from "date-fns";
 
 @Injectable()
 export class CustomDatepickerFormatService extends NgbDateParserFormatter {
@@ -20,12 +21,25 @@ export class CustomDatepickerFormatService extends NgbDateParserFormatter {
 
   format(date: NgbDateStruct | null): string {
     if(date){
-      let day = date.day > 9 ? date.day : ("0" + date.day).slice(-2)
-      let month = date.month > 9 ? date.month : ("0" + date.month).slice(-2)
+      let day = this.formatDay(date.day);
+      let month = this.formatMoth(date.month);
 
       return day + this.DELIMITER + month + this.DELIMITER + date.year;
-    }else{
-      return '00' + this.DELIMITER + '00' + this.DELIMITER + '0000';
+    }else{ 
+       
+      let year = new Date().getFullYear();
+      let day = this.formatDay(new Date().getDate())
+      let month = this.formatMoth(new Date().getMonth() + 1)
+
+      return day + this.DELIMITER + month + this.DELIMITER + year;
     }
+  }
+
+  formatDay(day: any){
+    return day > 9 ? day : ("0" + day).slice(-2)
+  }
+
+  formatMoth(month: any){
+    return month > 9 ? month : ("0" + month).slice(-2)
   }
 }

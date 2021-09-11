@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbDateParserFormatter, NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDatepickerI18n, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
 import { CustomDatepickerFormatService } from 'src/app/shared/helpers/custom-datepicker-format.service';
 import { CustomDatepickerI18nService, I18n } from 'src/app/shared/helpers/custom-datepicker-i18n.service';
@@ -20,6 +20,11 @@ export class ReservationWithoutCotractComponent implements OnInit {
   units: Office[];
   offices: Clinic[];
   unit: Office;
+  start_time_at: NgbTimeStruct = {hour: 9, minute: 0, second: 0};
+  end_time_at: NgbTimeStruct = {hour: 9, minute: 30, second: 0};
+  hourStep = 1;
+  minuteStep = 30;
+  startDate: any;
 
   PERSON_LIST = [
     { name: 'Pessoa Juridica', value: '0', checked: true,  },
@@ -29,10 +34,12 @@ export class ReservationWithoutCotractComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private settingsService: SettingsService
-  ) { }
+  ) { 
 
-  ngOnInit(): void { 
     this.createForm(); 
+  }
+
+  ngOnInit(): void {    
     this.getOffices();
     this.PERSON_LIST.forEach(o => {
       if (o.checked)
@@ -40,8 +47,8 @@ export class ReservationWithoutCotractComponent implements OnInit {
     });
   }
 
-  personType(item: number){
-    if (item == 0){
+  personType(item: string){
+    if (item === '0'){
       this.person_type ="CNPJ"
       this.mask = "00.000.000/0000-00"
     }else{
@@ -60,8 +67,8 @@ export class ReservationWithoutCotractComponent implements OnInit {
       unit: ['', [Validators.required]],
       office: ['', Validators.required],
       date_at: ['', Validators.required],
-      start_time_at: ['', Validators.required],
-      end_time_at: ['', Validators.required]
+      start_time_at: [this.start_time_at , Validators.required],
+      end_time_at: [this.end_time_at, Validators.required]
     })
   }
 

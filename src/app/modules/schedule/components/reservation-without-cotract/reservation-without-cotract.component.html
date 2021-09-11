@@ -66,8 +66,8 @@
         <div class="col-lg-6 col-md-6">
           <div class="form-group">
             <label>Data</label>
-            <div class="input-group">
-              <input id="dateOfBirth" class="form-control" formControlName="date_at" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group mt-4">
+              <input class="form-control" formControlName="date_at" ngbDatepicker #dp="ngbDatepicker" [startDate]="currentDate">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
                    <i class="fa fa-calendar"></i>
@@ -77,15 +77,15 @@
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
-          <div class="form-group">
-            <label>Hr/Inicio</label>
-            <input class="form-control form-control-solid" formControlName="start_time_at">  
+          <div class="form-group row">    
+            <label class="col-sm-4 col-form-label mt-9">Inic.</label>       
+            <ngb-timepicker formControlName="start_time_at"  [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
-          <div class="form-group">
-            <label>Hr/Final</label>
-            <input class="form-control form-control-solid" formControlName="end_time_at">  
+          <div class="form-group row">    
+            <label class="col-sm-4 col-form-label mt-9">Fim</label>                   
+            <ngb-timepicker formControlName="end_time_at" [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
           </div>
         </div>
       </div>
