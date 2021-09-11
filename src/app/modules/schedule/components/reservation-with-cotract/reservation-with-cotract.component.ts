@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
 
@@ -27,14 +28,21 @@ export class ReservationWithCotractComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService
   ) { 
     this.createForm(); 
+    this.getContract();
   }
 
-  ngOnInit(): void {
-    this.getOffices();
-    this.getContracts();
+  ngOnInit(): void {    
+  }
+
+
+  getContract(){
+   this.settingsService.getContracts().subscribe((data: any) => {
+     this.contracts = data.contracts    
+    });
   }
 
   createForm(){
@@ -45,19 +53,6 @@ export class ReservationWithCotractComponent implements OnInit {
       date_at: ['', Validators.required],
       start_time_at: [this.start_time_at , Validators.required],
       end_time_at: [this.end_time_at, Validators.required]
-    })
-  }
-
-
-  getOffices(){
-   this.settingsService.getOffices().subscribe((data: any) => {
-      this.units = data.offices;    
-    });
-  }
-
-  getContracts(){
-    this.settingsService.getContracts().subscribe((data: any) => {
-      this.contracts = data.contracts
     })
   }
 

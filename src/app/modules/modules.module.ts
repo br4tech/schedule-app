@@ -28,16 +28,16 @@ import { CompanyListComponent } from './company/company-list/company-list.compon
 import { CompanyEditComponent } from './company/company-edit/company-edit.component';
 import { CompanyFilterComponent } from './company/components/company-filter/company-filter.component';
 import { CompanyGridComponent } from './company/components/company-grid/company-grid.component';
-
-import { UserResolver } from './user/user.resolver';
-import { DoctorResolver } from './doctor/doctor.resolver';
-import { ScheduleResolver } from './schedule/schedule.resolver';
-import { FinancialResolverService } from './financial/financial-resolver.service';
-import { CompanyResolver } from './company/company.resolver';
 import { ModalCancelAttendanceComponent } from './contract/components/modal-cancel-attendance/modal-cancel-attendance.component';
 import { ModalCancelContractComponent } from './contract/components/modal-cancel-contract/modal-cancel-contract.component';
 import { ReservationWithCotractComponent } from './schedule/components/reservation-with-cotract/reservation-with-cotract.component';
 import { ReservationWithoutCotractComponent } from './schedule/components/reservation-without-cotract/reservation-without-cotract.component';
+
+import { UserResolver } from './user/user.resolver';
+import { DoctorResolver } from './doctor/doctor.resolver';
+import { ScheduleResolver } from '../shared/resolvers/schedule.resolver';
+import { FinancialResolverService } from './financial/financial-resolver.service';
+import { CompanyResolver } from './company/company.resolver';
 
 import { BaseModalComponent } from '../shared/components/modal/base-modal/base-modal.component';
 import { ModalService } from '../shared/components/modal/modal.service';

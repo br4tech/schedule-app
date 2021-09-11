@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbDateParserFormatter, NgbDatepickerI18n, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
-import { CustomDatepickerFormatService } from 'src/app/shared/helpers/custom-datepicker-format.service';
-import { CustomDatepickerI18nService, I18n } from 'src/app/shared/helpers/custom-datepicker-i18n.service';
 import { Clinic } from 'src/app/shared/models/clinic';
 import { Office } from 'src/app/shared/models/office';
 
@@ -35,7 +33,6 @@ export class ReservationWithoutCotractComponent implements OnInit {
     private fb: FormBuilder,
     private settingsService: SettingsService
   ) { 
-
     this.createForm(); 
   }
 

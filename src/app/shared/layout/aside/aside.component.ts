@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ContractEditComponent } from 'src/app/modules/contract/contract-edit/contract-edit.component';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
@@ -15,6 +16,7 @@ export class AsideComponent implements OnInit {
   offices:  any;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService,
     private ngxService: NgxUiLoaderService,
     private modalService: ModalService
@@ -22,14 +24,9 @@ export class AsideComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngxService.start();
-    this.getOffices();
-  }
-
-  getOffices(){
-    this.settingsService.getOffices().subscribe((data : any) => {
-      this.offices = data.offices; 
-      this.ngxService.stop();   
-    });
+    this.activatedRoute.data.subscribe((data) => {
+     this.offices = data.office.offices
+    });  
   }
 
   reservationWithContract(){

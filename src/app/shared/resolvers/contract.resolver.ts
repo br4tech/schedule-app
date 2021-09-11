@@ -5,20 +5,20 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Reservation } from 'src/app/shared/models/reservation';
-import { ScheduleService } from './schedule.service';
+import { SettingsService } from 'src/app/modules/settings/settings.service';
+import { Contract } from '../models/contract';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ScheduleResolver implements Resolve<Reservation[]> {
-
-  constructor(private scheduleService: ScheduleService ) { }
+export class ContractResolver implements Resolve<Contract[]> {
+  
+  constructor(private settinService: SettingsService ) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
     ): Observable<any> | Promise<any> | any {
-      return this.scheduleService.getReservations();
+      return this.settinService.getContracts();
   }
 }

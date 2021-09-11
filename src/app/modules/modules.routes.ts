@@ -12,22 +12,27 @@ import { UserListComponent } from "./user/user-list/user-list.component";
 import { UserEditComponent } from "./user/user-edit/user-edit.component";
 import { UserProfileComponent } from "./user/user-profile/user-profile.component";
 import { CompanyListComponent } from "./company/company-list/company-list.component";
+import { CompanyEditComponent } from "./company/company-edit/company-edit.component";
 
 import { DoctorResolver } from "./doctor/doctor.resolver";
-import { ScheduleResolver } from "./schedule/schedule.resolver";
+import { ScheduleResolver } from "../shared/resolvers/schedule.resolver";
 import { FinancialResolverService } from "./financial/financial-resolver.service";
 import { UserResolver } from "./user/user.resolver";
-import { CompanyEditComponent } from "./company/company-edit/company-edit.component";
 import { CompanyResolver } from "./company/company.resolver";
-
+import { OfficeResolver } from "../shared/resolvers/office.resolver";
+import { ContractResolver } from "../shared/resolvers/contract.resolver";
 
 export const ROUTES: Routes = [
         {
                 path: '',
-                component: LayoutComponent,             
+                component: LayoutComponent, 
+                resolve: { 
+                        office: OfficeResolver,
+                        contract: ContractResolver
+                },           
                 children: [
                         { path: '', redirectTo: 'schedule', pathMatch: 'full' },
-                        { path: 'schedule', component: ContractScheduleComponent, resolve: { item: ScheduleResolver } },
+                        { path: 'schedule', component: ContractScheduleComponent, resolve: { item: ScheduleResolver} },
                         { path: 'contracts', component: ContractListComponent },
                         { path: 'contract', component: ContractEditComponent },
                         { path: 'contract/:id', component: ContractEditComponent },
