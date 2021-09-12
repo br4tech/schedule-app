@@ -39,8 +39,7 @@ export class ReservationWithoutCotractComponent implements OnInit, ModalContentC
     this.createForm(); 
   }
 
-  ngOnInit(): void {  
-    debugger;  
+  ngOnInit(): void {   
     this.PERSON_LIST.forEach(o => {
       if (o.checked)
        this.getCheckedRadio = o.value;
