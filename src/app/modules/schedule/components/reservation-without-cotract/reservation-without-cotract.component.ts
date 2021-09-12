@@ -73,8 +73,9 @@ export class ReservationWithoutCotractComponent implements OnInit, ModalContentC
 
 
   onChangeUnit(event: any){
-     if(event.value !== "00"){       
-      let filter = <Office[]>this.data.offices.filter(f => f.id == event.value)  
+     if(event.value !== "00"){    
+      let offices = <Office[]>this.data.offices;    
+      let filter = offices.filter(f => f.id == event.value)  
       this.offices = filter[0].clinics;
      }else{
        this.offices = <Clinic[]> null;
