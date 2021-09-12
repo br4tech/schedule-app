@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
+import { ModalContentComponent } from 'src/app/shared/components/modal/modal-content.interface';
 import { Clinic } from 'src/app/shared/models/clinic';
 import { Office } from 'src/app/shared/models/office';
 
@@ -10,7 +11,9 @@ import { Office } from 'src/app/shared/models/office';
   templateUrl: './reservation-without-cotract.component.html',
   styleUrls: ['./reservation-without-cotract.component.scss'],
 })
-export class ReservationWithoutCotractComponent implements OnInit {
+export class ReservationWithoutCotractComponent implements OnInit, ModalContentComponent {
+  data: any;
+  activeModal: NgbActiveModal;
   form: FormGroup;
   person_type: string = "CNPJ";
   mask: string = "00.000.000/0000-00"
@@ -36,8 +39,8 @@ export class ReservationWithoutCotractComponent implements OnInit {
     this.createForm(); 
   }
 
-  ngOnInit(): void {    
-    this.getOffices();
+  ngOnInit(): void {  
+    debugger;  
     this.PERSON_LIST.forEach(o => {
       if (o.checked)
        this.getCheckedRadio = o.value;
@@ -69,15 +72,10 @@ export class ReservationWithoutCotractComponent implements OnInit {
     })
   }
 
-  getOffices(){
-   this.settingsService.getOffices().subscribe((data: any) => {
-      this.units = data.offices;    
-    });
-  }
 
   onChangeUnit(event: any){
      if(event.value !== "00"){       
-      let filter = <Office[]>this.units.filter( f => f.id == event.value)  
+      let filter = <Office[]>this.data.offices.filter(f => f.id == event.value)  
       this.offices = filter[0].clinics;
      }else{
        this.offices = <Clinic[]> null;

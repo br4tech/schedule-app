@@ -5,6 +5,8 @@ import { ContractEditComponent } from 'src/app/modules/contract/contract-edit/co
 import { SettingsService } from 'src/app/modules/settings/settings.service';
 import { ModalService } from '../../components/modal/modal.service';
 import { Contract } from '../../models/contract';
+import { ModalWithContract } from '../../models/modal-with-contract';
+import { Office } from '../../models/office';
 
 @Component({
   selector: 'app-aside',
@@ -13,7 +15,8 @@ import { Contract } from '../../models/contract';
 })
 
 export class AsideComponent implements OnInit {
-  offices:  any;
+  offices:  Office[];
+  contracts: Contract[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,16 +28,17 @@ export class AsideComponent implements OnInit {
   ngOnInit(): void {
     this.ngxService.start();
     this.activatedRoute.data.subscribe((data) => {
+     this.contracts = data.contract.contracts
      this.offices = data.office.offices
     });  
   }
 
   reservationWithContract(){
-    let contract: Contract
-    this.modalService.openReservationWithContract(contract)
+    let modalWithContract= new ModalWithContract(this.contracts, this.offices)
+    this.modalService.openReservationWithContract(modalWithContract)
   }
 
   reservationWithOutContract(){
-    this.modalService.openReservationWithOutContract()
+    this.modalService.openReservationWithOutContract(this.offices)
   }
 }

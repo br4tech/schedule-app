@@ -7,7 +7,7 @@
             <label>Contrato</label>
             <select class="form-control"  formControlName="contract">
               <option value="01">Selecione uma Contrato</option>
-              <option *ngFor="let contract of contracts" [value]="contract.id">{{ contract.client.name }}</option>    
+              <option *ngFor="let contract of data.modalInfo.contracts" [value]="contract.id">{{ contract.client.name }}</option>    
             </select> 
           </div>       
         </div>
@@ -18,7 +18,7 @@
             <label>Unidade</label>
             <select class="form-control"  formControlName="unit" (change)="onChangeUnit($event.target)">
               <option value="00">Selecione uma Unidade</option>
-              <option *ngFor="let unit of units" [value]="unit.id">{{ unit.name }}</option>               
+              <option *ngFor="let unit of data.modalInfo.offices" [value]="unit.id">{{ unit.name }}</option>               
             </select> 
           </div>
         </div>

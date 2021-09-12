@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
+import { BaseModalComponent } from 'src/app/shared/components/modal/base-modal/base-modal.component';
+import { ModalContentComponent } from 'src/app/shared/components/modal/modal-content.interface';
 
 import { Clinic } from 'src/app/shared/models/clinic';
 import { Contract } from 'src/app/shared/models/contract';
@@ -13,7 +15,9 @@ import { Office } from 'src/app/shared/models/office';
   templateUrl: './reservation-with-cotract.component.html',
   styleUrls: ['./reservation-with-cotract.component.scss']
 })
-export class ReservationWithCotractComponent implements OnInit {
+export class ReservationWithCotractComponent implements OnInit, ModalContentComponent {
+  data: any;
+  activeModal: NgbActiveModal;
   form: FormGroup;
   units: Office[];
   offices: Clinic[];
@@ -28,21 +32,11 @@ export class ReservationWithCotractComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private settingsService: SettingsService
   ) { 
     this.createForm(); 
-    this.getContract();
   }
 
-  ngOnInit(): void {    
-  }
-
-
-  getContract(){
-   this.settingsService.getContracts().subscribe((data: any) => {
-     this.contracts = data.contracts    
-    });
+  ngOnInit(): void {   
   }
 
   createForm(){
@@ -58,7 +52,7 @@ export class ReservationWithCotractComponent implements OnInit {
 
   onChangeUnit(event: any){
      if(event.value !== "00"){       
-      let filter = <Office[]>this.units.filter( f => f.id == event.value)  
+      let filter = <Office[]>this.data.modalInfo.offices.filter(f => f.id == event.value)  
       this.offices = filter[0].clinics;
      }else{
        this.offices = <Clinic[]> null;

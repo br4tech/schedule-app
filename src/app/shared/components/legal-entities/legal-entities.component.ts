@@ -31,7 +31,6 @@ export class LegalEntitiesComponent implements OnInit {
   }
 
   personType(){
-    debugger
     if (this.form.get("value")){
       this.person_type ="CNPJ"
     }else{

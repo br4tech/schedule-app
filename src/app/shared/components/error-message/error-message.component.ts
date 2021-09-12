@@ -18,7 +18,6 @@ export class ErrorMessageComponent implements OnInit {
   }
 
   get errorMessage() {
-    debugger
     for (const propertyName in this.control.errors) {
       if (this.control.errors.hasOwnProperty(propertyName) &&
         this.control.touched) {

@@ -48,7 +48,7 @@
             <label>Unidade</label>
             <select class="form-control" formControlName="unit" (change)="onChangeUnit($event.target)">
               <option value="00">Selecione uma Unidade</option>
-              <option *ngFor="let unit of units" [value]="unit.id">{{ unit.name }}</option>               
+              <option *ngFor="let unit of data.offices" [value]="unit.id">{{ unit.name }}</option>               
             </select> 
           </div>
         </div>

@@ -248,9 +248,7 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   }
 
   onChange(name: string, isChecked: any, index: number) {
-    debugger;
     let controlDays = <FormArray>this.formulario.controls.attendances.get('attendance_days')
-    // let controlDays = <FormArray>controlAttendances[]
 
     if (isChecked) {
      controlDays.push(this.fb.group({
