@@ -7,17 +7,19 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt-PT';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { ReportModule } from './modules/report/reporte.module';
+import { NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ModulesModule } from './modules/modules.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AsideComponent } from './shared/layout/aside/aside.component';
 import { SubheaderComponent } from './shared/layout/subheader/subheader.component';
-import { NgxUiLoaderModule } from 'ngx-ui-loader';
-import { ModulesModule } from './modules/modules.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
-import { NgxMaskModule } from 'ngx-mask';
+import { NotificationErrorComponent } from './shared/components/notification/notification-error/notification-error.component';
+
 
 registerLocaleData(localePt);
 
@@ -27,7 +29,8 @@ registerLocaleData(localePt);
     LayoutComponent,
     AsideComponent,
     SubheaderComponent,
-    ErrorMessageComponent    
+    ErrorMessageComponent,
+    NotificationErrorComponent,  
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,7 +42,8 @@ registerLocaleData(localePt);
     HttpClientModule,
     NgbModule,
     ModulesModule,    
-    ReportModule
+    ReportModule,
+    ToastrModule.forRoot()
   ],
   providers: [
   

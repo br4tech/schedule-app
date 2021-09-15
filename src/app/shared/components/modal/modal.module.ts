@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BaseModalComponent } from './base-modal/base-modal.component';
 import { InnerContentDirective } from './inner-content.directive';
 import { ModalService } from './modal.service';
+import { NotificationService } from '../notification/notification.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,10 @@ import { ModalService } from './modal.service';
   entryComponents: [
     BaseModalComponent 
   ],
-  providers: [ModalService],
+  providers: [
+    ModalService,
+    NotificationService
+    ],
 })
 
 export class ModalModule { }

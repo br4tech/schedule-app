@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsService } from 'src/app/modules/settings/settings.service';
 import { ModalContentComponent } from 'src/app/shared/components/modal/modal-content.interface';
+import { NotificationService } from 'src/app/shared/components/notification/notification.service';
 import { Clinic } from 'src/app/shared/models/clinic';
 import { Office } from 'src/app/shared/models/office';
 
@@ -34,7 +35,8 @@ export class ReservationWithoutCotractComponent implements OnInit, ModalContentC
 
   constructor(
     private fb: FormBuilder,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private notificationService: NotificationService
   ) { 
     this.createForm(); 
   }
@@ -81,4 +83,8 @@ export class ReservationWithoutCotractComponent implements OnInit, ModalContentC
        this.offices = <Clinic[]> null;
      }
   }
+
+ sucess(){
+   this.notificationService.notificationSucess();
+ }
 }

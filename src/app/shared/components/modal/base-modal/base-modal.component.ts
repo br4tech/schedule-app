@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
 import { NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NotificationService } from '../../notification/notification.service';
 import { InnerContentDirective } from '../inner-content.directive';
 import { ModalContentComponent } from '../modal-content.interface';
 
@@ -16,6 +17,7 @@ export class BaseModalComponent<T> implements OnInit, AfterContentInit {
   constructor(
     public activeModal: NgbActiveModal,
     private componentFactoryResolver: ComponentFactoryResolver,
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,16 @@ export class BaseModalComponent<T> implements OnInit, AfterContentInit {
   }
 
   close(){
+    this.activeModal.close(this.data)
+  }
+
+  sucess(){
+   this.notificationService.notificationSucess();
+   this.activeModal.close(this.data)
+  }
+
+  error(){
+    this.notificationService.notificationError();
     this.activeModal.close(this.data)
   }
 }

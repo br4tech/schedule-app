@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import '~ngx-toastr/toastr';
+
 
 // ASSETS
 @import "./assets/css/default.scss";
@@ -159,5 +161,9 @@ body, html {
 
 .backgroud-modal{
 	background: #1bc5bd;
+}
+.toast-top-right{
+	width: 420px!important;
+	margin-top: 10px !important;
 }
 
