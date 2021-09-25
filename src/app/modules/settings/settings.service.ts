@@ -6,6 +6,7 @@ import { Contract } from 'src/app/shared/models/contract';
 
 import { Holiday } from 'src/app/shared/models/holiday';
 import { Office } from 'src/app/shared/models/office';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +16,18 @@ export class SettingsService {
   constructor(private httpClient: HttpClient) { }
 
   getOffices() : Observable<Office[]>{
-    return this.httpClient.get<Office[]>('api/v1/offices').pipe(share(), delay
+    debugger
+    return this.httpClient.get<Office[]>(environment.base_url + '/offices').pipe(share(), delay
     (2000));
   }
 
   getContracts() : Observable<Contract[]>{
-    return this.httpClient.get<Contract[]>('api/v1/contracts').pipe(share(), delay
+    return this.httpClient.get<Contract[]>(environment.base_url + '/contracts').pipe(share(), delay
     (2000));
   }
 
   getHolidays() : Observable<Holiday[]>{
-    return this.httpClient.get<Holiday[]>('api/v1/holidays').pipe(share(), delay
+    return this.httpClient.get<Holiday[]>(environment.base_url + '/holidays').pipe(share(), delay
     (2000));
   }
 }

@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 import { Contract } from '../../shared/models/contract';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class ContractService {
   }
 
   getContracts() : Observable<Contract[]>{
-    return this.httpClient.get<Contract[]>('api/v1/contracts')
+    return this.httpClient.get<Contract[]>(environment.base_url +'/contracts')
       .pipe(
         retry(2),
         catchError(this.handleError))

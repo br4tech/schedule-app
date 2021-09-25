@@ -1,7 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { retry, catchError, delay, share } from 'rxjs/operators';
+import { Observable} from 'rxjs';
+import { delay, share } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 import { Bill } from '../../shared/models/bill';
 @Injectable({
@@ -13,7 +14,7 @@ export class FinancialService {
   constructor(private httpClient: HttpClient) { }
 
   getBills() : Observable<Bill[]>{
-    return this.httpClient.get<Bill[]>('api/v1/bills').pipe(share(), delay
+    return this.httpClient.get<Bill[]>(environment.base_url + '/bills').pipe(share(), delay
     (2000));
   }
 }

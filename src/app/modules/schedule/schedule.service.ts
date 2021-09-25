@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Reservation } from 'src/app/shared/models/reservation';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ScheduleService {
   }
 
   getReservations() : Observable<Reservation[]>{
-    return this.httpClient.get<Reservation[]>('api/v1/reservations')
+    return this.httpClient.get<Reservation[]>(environment.base_url + '/reservations')
       .pipe(
         retry(2),
         catchError(this.handleError))
