@@ -64,9 +64,23 @@
   </div>
 
   <div class="aside-secondary d-flex flex-row-fluid">
-    <div class="aside-workspace scroll scroll-push my-2 ps" style="height: 937px; overflow: hidden;">
+    <div class="aside-workspace scroll scroll-push my-2 ps" style="min-height: 800px; overflow: hidden;">
       <div class="tab-content">
         <div class="tab-pane p-2 fade show active">
+          <a routerLink="/settings/office" class="btn btn-primary btn-block font-weight-bold mr-2">
+            <i class=""></i>
+            <i class="fa fa-plus-circle"></i> Nova Unidade
+          </a>
+          <hr />
+          <a (click)="reservationWithContract()" class="btn btn-primary btn-block font-weight-bold mr-2">
+            <i class=""></i>
+            <i class="fa fa-plus-circle"></i> Reserva c/ Contrato
+          </a>
+          <a (click)="reservationWithOutContract()" class="btn btn-primary btn-block font-weight-bold mr-2">
+            <i class=""></i>
+            <i class="fa fa-plus-circle"></i> Reserva s/ Contrato
+          </a>
+          <hr />
           <h3 class="p-2 p-lg-3 my-1 my-lg-3"> Unidades </h3>
           <div class="list list-hover" *ngFor="let office of offices">
             <div class="list-item hoverable p-2 p-lg-3 mb-2">
@@ -86,20 +100,6 @@
               </div>
             </div>
           </div>
-          <hr />
-          <a routerLink="/settings/office" class="btn btn-primary btn-block font-weight-bold mr-2">
-            <i class=""></i>
-            <i class="fa fa-plus-circle"></i> Nova Unidade
-          </a>
-          <hr />
-          <a (click)="reservationWithContract()" class="btn btn-primary btn-block font-weight-bold mr-2">
-            <i class=""></i>
-            <i class="fa fa-plus-circle"></i> Reserva c/ Contrato
-          </a>
-          <a (click)="reservationWithOutContract()" class="btn btn-primary btn-block font-weight-bold mr-2">
-            <i class=""></i>
-            <i class="fa fa-plus-circle"></i> Reserva s/ Contrato
-          </a>
         </div>
       </div>
     </div>
