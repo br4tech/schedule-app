@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BaseFormComponent } from 'src/app/shared/components/base-form/base-form.component';
 import { FormValidations } from 'src/app/shared/validators/form-validator';
 
@@ -14,6 +16,11 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
 
   formulario: FormGroup;
   person_type: string = "Pessoa Juridica"
+  mask: string = "00.000.000/0000-00"
+  start_time_at: NgbTimeStruct = {hour: 9, minute: 0, second: 0};
+  end_time_at: NgbTimeStruct = {hour: 9, minute: 30, second: 0};
+  hourStep = 1;
+  minuteStep = 30;
 
   data = {
     name: "",
@@ -56,8 +63,8 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
       attendance_unit: "",
       attendance_office: "",
       attendance_value: "",
-      attendance_time_start: "",
-      attendance_time_and:""
+      attendance_time_start: this.start_time_at,
+      attendance_time_and: this.end_time_at
     }]
   }
 
@@ -67,16 +74,17 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   ]
 
   DAYS_WEEK = [
-   {  name: 'Seg', value: '1' },
-   {  name: 'Ter', value: '2' },
-   {  name: 'Qua', value: '3' },
-   {  name: 'Qui', value: '4' },
-   {  name: 'Sex', value: '5' },
-   {  name: 'Sab', value: '6' }
+   {  name: 'Seg', value: '0' },
+   {  name: 'Ter', value: '1' },
+   {  name: 'Qua', value: '2' },
+   {  name: 'Qui', value: '3' },
+   {  name: 'Sex', value: '4' },
+   {  name: 'Sab', value: '5' }
   ]
 
   constructor(
-    private fb: FormBuilder  
+    private fb: FormBuilder,
+    private ngxService: NgxUiLoaderService,
     ) {
       super();
    }
@@ -113,10 +121,11 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
     this.setDoctors();
     this.setDiscounts();
     this.setAttendances();
+    this.ngxService.stop();
   }   
 
   submit(){
-    // Aqui onde deve passar os dados para o service
+    debugger;
   }
 
   get doctorFormGroups () {
@@ -126,8 +135,10 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   personType(){
     if (this.formulario.controls.person.value == "0"){
       this.person_type ="CNPJ"
+      this.mask = "00.000.000/0000-00"
     }else{
       this.person_type ="CPF"
+      this.mask = "00.000.0000-00"
     }
   }
 
@@ -217,9 +228,9 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
         attendance_days: this.fb.array([], Validators.required),
         attendance_unit: ['', [Validators.required]],
         attendance_office: ['', [Validators.required]],
-        attendance_value: ['', [Validators.required]],
-        attendance_time_start: ['',[Validators.required]],
-        attendance_time_and: ['',  [Validators.required]]
+        attendance_value: ['', [Validators.required]],         
+        attendance_time_start: [this.start_time_at, [Validators.required]],
+        attendance_time_and: [this.end_time_at,  [Validators.required]]
       })
     )
   }

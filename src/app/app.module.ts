@@ -8,7 +8,6 @@ import localePt from '@angular/common/locales/pt-PT';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReportModule } from './modules/report/reporte.module';
-import { NgxMaskModule } from 'ngx-mask';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ModulesModule } from './modules/modules.module';
@@ -20,7 +19,6 @@ import { SubheaderComponent } from './shared/layout/subheader/subheader.componen
 import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
 import { NotificationErrorComponent } from './shared/components/notification/notification-error/notification-error.component';
 
-
 registerLocaleData(localePt);
 
 @NgModule({
@@ -30,7 +28,7 @@ registerLocaleData(localePt);
     AsideComponent,
     SubheaderComponent,
     ErrorMessageComponent,
-    NotificationErrorComponent,  
+    NotificationErrorComponent   
   ],
   imports: [
     BrowserAnimationsModule,

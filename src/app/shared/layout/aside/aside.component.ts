@@ -20,7 +20,6 @@ export class AsideComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private settingsService: SettingsService,
     private ngxService: NgxUiLoaderService,
     private modalService: ModalService
     ) { }

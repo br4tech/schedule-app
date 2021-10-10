@@ -51,6 +51,9 @@ import { NgbDateParserFormatter, NgbDatepickerI18n, NgbDatepickerModule, NgbTime
 import { CustomDatepickerI18nService } from '../shared/helpers/custom-datepicker-i18n.service';
 import { NgxMaskModule } from 'ngx-mask';
 import { CustomDatepickerFormatService } from '../shared/helpers/custom-datepicker-format.service';
+import { StateComponent } from '../shared/components/state/state.component';
+import { UnitComponent } from '../shared/components/unit/unit.component';
+
 
 @NgModule({
   imports: [
@@ -93,7 +96,9 @@ import { CustomDatepickerFormatService } from '../shared/helpers/custom-datepick
     ReservationWithCotractComponent,
     ReservationWithoutCotractComponent,
     LegalEntitiesComponent,
-    BranchUnitiesComponent
+    BranchUnitiesComponent,
+    StateComponent,
+    UnitComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

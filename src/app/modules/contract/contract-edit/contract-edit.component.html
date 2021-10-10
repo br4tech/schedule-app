@@ -6,12 +6,12 @@
         <div class="example-tools justify-content-center">
           <div class="radio-inline">
             <label class="radio radio-solid">
-              <input type="radio" name="example_1" checked="checked" value="1">              
+              <input type="radio" name="company" checked="checked" value="1">              
               <span></span>
               Contrato Density
             </label>
             <label class="radio radio-solid">
-              <input type="radio" name="example_2" value="2">
+              <input type="radio" name="company" value="2">
               <span></span>
               Contrato Pronto
             </label>
@@ -35,19 +35,16 @@
         </div>
         <div class="col-lg-3 col-md-3">
           <label>Tipo</label>
-          <div class="radio-inline">
-            <div *ngFor="let item of PERSON_LIST; let i=index">
-              <label class="radio radio-solid">
-                <span></span>
-                {{item.name}}          
-                <input type="radio" [value]="item.value" [checked]="item.checked" (change)="personType()" formControlName="person" />
-              </label>
-            </div>         
-          </div>
+          <div *ngFor="let item of PERSON_LIST; let i=index">
+            <input type="radio"  class="form-check-input" [value]="item.value" [checked]="item.checked" (change)="personType()" formControlName="person" />
+            <label class="form-check-label">                       
+              {{item.name}}                      
+            </label>
+          </div>          
         </div>
         <div class="col-lg-3 col-md-3">
           <label>{{ person_type }}</label>
-          <input class="form-control form-control-solid" [ngClass]="applyCssError('document')" formControlName="document">
+          <input class="form-control form-control-solid" [ngClass]="applyCssError('document')" formControlName="document" [mask]="mask">
         </div>
       </div>
 
@@ -76,18 +73,9 @@
           <label>Bairro</label>
           <input class="form-control form-control-solid" [ngClass]="applyCssError('neighborhood')" formControlName="neighborhood">
         </div>
-        <div class="col-lg-3">
-          <label>Cidade</label>
-          <select class="form-control" name="city" [ngClass]="applyCssError('city')" formControlName="city">
-            <option value="01">Selecione uma Cidade</option>
-          </select>
-        </div>
-        <div class="col-lg-3 col-md-3">
-          <label>Estado</label>
-          <select class="form-control" name="state" [ngClass]="applyCssError('state')" formControlName="state">
-            <option value="01">Selecione uma Estado</option>
-          </select>
-        </div>
+        <div class="col-lg-9 col-md-9">
+          <app-state>Teste</app-state>
+        </div>       
       </div>
 
       <p class="bg-primary text-white py-2 px-4">Medicos</p>
@@ -113,22 +101,22 @@
               </div>
               <div class="col-lg-3 col-md-2">
                 <label>CPF</label>
-                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_document', i )" formControlName="doctor_document">
+                <input class="form-control form-control-solid" mask="000.000.000-00" [ngClass]="applyCssErrorToArray('doctors','doctor_document', i )" formControlName="doctor_document">
               </div>
-              <div class="col-lg-2 col-md-2">
-                <label>Dt. Nasc.</label>
+              <div class="col-lg-2 col-md-2">  
+                <label>Dt. Nasci.</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('doctors','doctor_birthday', i )" formControlName="doctor_birthday">
+                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtBirthday="ngbDatepicker">
                   <div class="input-group-append">
-                    <span class="input-group-text">
+                    <button class="btn btn-outline-secondary" (click)="dtBirthday.toggle()" type="button">
                       <i class="fa fa-calendar"></i>
-                    </span>
+                    </button>
                   </div>
-                </div>
+                </div>           
               </div>
               <div class="col-lg-2 col-md-2">
                 <label>CRM</label>
-                <input class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_crm', i )" formControlName="doctor_crm">
+                <input type="number" class="form-control form-control-solid" [ngClass]="applyCssErrorToArray('doctors','doctor_crm', i )" formControlName="doctor_crm">
               </div>
             </div>
             <div class="form-group row">
@@ -139,7 +127,7 @@
               <div class="col-lg-3 col-md-3">
                 <label>Telefone</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('doctors','doctor_phone', i )" formControlName="doctor_phone" >
+                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('doctors','doctor_phone', i )" formControlName="doctor_phone" mask="(00) 0000-0000"  >
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-phone"></i>
@@ -150,7 +138,7 @@
               <div class="col-lg-3 col-md-3">
                 <label>Celular</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="doctor_celphone" >
+                  <input type="text" class="form-control" formControlName="doctor_celphone" mask="(00) 00000-0000" >
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-mobile"></i>
@@ -184,27 +172,25 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Inicio</label>
           <div class="input-group">
-            <input type="text" class="form-control" [ngClass]="applyCssError('start_at')" formControlName="start_at" >
+            <input class="form-control" formControlName="date_at" ngbDatepicker #dtStart="ngbDatepicker">
             <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-calendar"></i>
-              </span>
+              <button class="btn btn-outline-secondary" (click)="dtStart.toggle()" type="button">
+                  <i class="fa fa-calendar"></i>
+              </button>
             </div>
-          </div>
+          </div>        
         </div>
         <div class="col-lg-2 col-md-2">
           <label>Dat. Término</label>
           <div class="input-group">
-            <input type="text" class="form-control" [ngClass]="applyCssError('end_at')" formControlName="end+at" >
+            <input class="form-control" formControlName="date_at" ngbDatepicker #dtFinish="ngbDatepicker">
             <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-calendar"></i>
-              </span>
+              <button class="btn btn-outline-secondary" (click)="dtFinish.toggle()" type="button">
+                  <i class="fa fa-calendar"></i>
+              </button>
             </div>
           </div>
         </div>
-
-  
         <div class="col-lg-2 col-md-2">
           <label>D. de Fat.</label>
           <select class="form-control" [ngClass]="applyCssError('revenues_at')" formControlName="revenues_at">
@@ -273,7 +259,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Porcentagem</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="discount_amount">
+                  <input type="number" class="form-control" formControlName="discount_amount">
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-percent"></i>
@@ -283,23 +269,23 @@
               </div>
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Inicio</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" formControlName="discount_starts_at" >
+                 <div class="input-group">
+                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtDescStart="ngbDatepicker">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-calendar"></i>
-                    </span>
+                    <button class="btn btn-outline-secondary" (click)="dtDescStart.toggle()" type="button">
+                        <i class="fa fa-calendar"></i>
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" formControlName="discount_ends_at" >
+                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtDescAnd="ngbDatepicker">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-calendar"></i>
-                    </span>
+                    <button class="btn btn-outline-secondary" (click)="dtDescAnd.toggle()" type="button">
+                        <i class="fa fa-calendar"></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -343,12 +329,12 @@
                 <label>Periodicidade</label>
                 <div class="radio-inline">
                   <label class="radio radio-solid">
-                    <input type="radio" checked="checked" value="1">
+                    <input type="radio" name="att_type" checked="checked" value="1">
                     <span></span>
                     Semanal
                   </label>
                   <label class="radio radio-solid">
-                    <input type="radio" value="2">
+                    <input type="radio" name="att_type" value="2">
                     <span></span>
                     Quinzenal
                   </label>
@@ -357,22 +343,22 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. Inicio</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_starts_at', i )" formControlName="attendance_starts_at" >
+                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtAttStatr="ngbDatepicker">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-calendar"></i>
-                    </span>
+                    <button class="btn btn-outline-secondary" (click)="dtAttStatr.toggle()" type="button">
+                        <i class="fa fa-calendar"></i>
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_ends_at', i )" formControlName="attendance_ends_at" >
+                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtAttEnd="ngbDatepicker">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-calendar"></i>
-                    </span>
+                    <button class="btn btn-outline-secondary" (click)="dtAttEnd.toggle()" type="button">
+                        <i class="fa fa-calendar"></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -391,30 +377,12 @@
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-lg-3 col-md-3">
-                <label>Unidade</label>
-                <select class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_unit', i )" formControlName="attendance_unit">
-                  <option value="00">Selecione uma Unidade</option>
-                  <option value="01">Pinheiros</option>
-                  <option value="02">Cardeal Arcoverde</option>
-                  <option value="03">Maestro Cardim</option>
-                  <option value="04">Pamplona</option>
-                  <option value="05">Veiga Filho</option>
-                </select>
-              </div>
-              <div class="col-lg-3 col-md-3">
-                <label>Sala</label>
-                <select class="form-control" [ngClass]="applyCssErrorToArray('attendances','attendance_office', i )" formControlName="attendance_office">
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                </select>
-              </div>
+              <div class="col-6 mt-4">
+                <app-unit>Units</app-unit>
+              </div>             
               <div class="col-lg-2 col-md-2">
                 <label>Valor/Hora</label>
-                <div class="input-group">
+                <div class="input-group mt-4">
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="fa fa-dollar"></i>
@@ -424,25 +392,15 @@
                 </div>
               </div>
               <div class="col-lg-2 col">
-                <label>HR. Início</label>
-                <div class="input-group date">
-                  <input class="form-control"  type="text"  formControlName="attendance_time_start">
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-clock-o"></i>
-                    </span>
-                  </div>
+                <div class="form-group row">    
+                  <label class="col-sm-4 col-form-label mt-9">Inic.</label>       
+                  <ngb-timepicker formControlName="attendance_time_start"  [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
                 </div>
               </div>
               <div class="col-lg-2">
-                <label>HR. Término</label>
-                <div class="input-group date">
-                  <input class="form-control"  type="text"  formControlName="attendance_time_and">
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-clock-o"></i>
-                    </span>
-                  </div>
+                <div class="form-group row">    
+                  <label class="col-sm-4 col-form-label mt-9">Fim</label>                   
+                  <ngb-timepicker formControlName="attendance_time_and" [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
                 </div>
               </div>
             </div>    
