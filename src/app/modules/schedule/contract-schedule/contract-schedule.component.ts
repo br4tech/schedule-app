@@ -10,8 +10,9 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-contract-schedule',
-  templateUrl: './contract-schedule.component.html'
+  templateUrl: './contract-schedule.component.html',
 })
+
 export class ContractScheduleComponent implements OnInit {
 
   @ViewChild("modalContent", { static: true }) modalContent: TemplateRef<any> | undefined;
@@ -21,7 +22,6 @@ export class ContractScheduleComponent implements OnInit {
   viewDate: Date = new Date();
   activeDayIsOpen: boolean = true;
   locale: string = 'pt-PT';
- 
   reservation = {} as Reservation;
   reservations: Reservation[] = [];
   events: CalendarEvent[] = [];
@@ -128,12 +128,15 @@ export class ContractScheduleComponent implements OnInit {
       let reservation : CalendarEvent =  {
         start: new Date(start),   
         end: new Date(end),      
-        title: description      
+        title: description, 
+        color: {
+          primary: f.color,
+          secondary: f.color,
+        }
       }
+
       this.events.push(reservation)
     })
-
-    new Date("2021-07-06  21:25:28")
- 
+    new Date("2021-07-06  21:25:28") 
   }
 }
