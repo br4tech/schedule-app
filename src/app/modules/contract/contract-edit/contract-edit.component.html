@@ -74,7 +74,22 @@
           <input class="form-control form-control-solid" [ngClass]="applyCssError('neighborhood')" formControlName="neighborhood">
         </div>
         <div class="col-lg-9 col-md-9">
-          <app-state>Teste</app-state>
+          <div class="row">
+            <div class="col-lg-3 col-md-3">
+              <label>Estado</label>
+              <select class="form-control" (change)="onChangeState($event.target)" formControlName="state_id">
+                <option value="00">Selecione uma Estado</option>
+                <option *ngFor="let state of states" [value]="state.id">{{ state.name }}</option>               
+              </select>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <label>Cidade</label>
+              <select class="form-control" formControlName="city_id">
+                <option value="01">Selecione uma Cidade</option>
+                <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>    
+              </select>
+            </div>
+          </div>
         </div>       
       </div>
 
@@ -106,7 +121,7 @@
               <div class="col-lg-2 col-md-2">  
                 <label>Dt. Nasci.</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtBirthday="ngbDatepicker">
+                  <input class="form-control" formControlName="doctor_birthday" ngbDatepicker #dtBirthday="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtBirthday.toggle()" type="button">
                       <i class="fa fa-calendar"></i>
@@ -172,7 +187,7 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Inicio</label>
           <div class="input-group">
-            <input class="form-control" formControlName="date_at" ngbDatepicker #dtStart="ngbDatepicker">
+            <input class="form-control" formControlName="start_at" ngbDatepicker #dtStart="ngbDatepicker">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" (click)="dtStart.toggle()" type="button">
                   <i class="fa fa-calendar"></i>
@@ -183,7 +198,7 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Término</label>
           <div class="input-group">
-            <input class="form-control" formControlName="date_at" ngbDatepicker #dtFinish="ngbDatepicker">
+            <input class="form-control" formControlName="end_at" ngbDatepicker #dtFinish="ngbDatepicker">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" (click)="dtFinish.toggle()" type="button">
                   <i class="fa fa-calendar"></i>
@@ -270,7 +285,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Inicio</label>
                  <div class="input-group">
-                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtDescStart="ngbDatepicker">
+                  <input class="form-control" formControlName="discount_starts_at" ngbDatepicker #dtDescStart="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtDescStart.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -281,7 +296,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtDescAnd="ngbDatepicker">
+                  <input class="form-control" formControlName="discount_ends_at" ngbDatepicker #dtDescAnd="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtDescAnd.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -329,12 +344,12 @@
                 <label>Periodicidade</label>
                 <div class="radio-inline">
                   <label class="radio radio-solid">
-                    <input type="radio" name="att_type" checked="checked" value="1">
+                    <input type="radio"  formControlName="attendance_kind" checked="checked" value="1">
                     <span></span>
                     Semanal
                   </label>
                   <label class="radio radio-solid">
-                    <input type="radio" name="att_type" value="2">
+                    <input type="radio"  formControlName="attendance_kind" value="2">
                     <span></span>
                     Quinzenal
                   </label>
@@ -343,7 +358,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. Inicio</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtAttStatr="ngbDatepicker">
+                  <input class="form-control" formControlName="attendance_starts_at" ngbDatepicker #dtAttStatr="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtAttStatr.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -354,7 +369,7 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="date_at" ngbDatepicker #dtAttEnd="ngbDatepicker">
+                  <input class="form-control" formControlName="attendance_ends_at" ngbDatepicker #dtAttEnd="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtAttEnd.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -378,7 +393,29 @@
             </div>
             <div class="form-group row">
               <div class="col-6 mt-4">
-                <app-unit>Units</app-unit>
+                <div class="row">
+                  <div class="col-lg-8 col-md-8">
+                    <label>Unidade</label>
+                    <select class="form-control" formControlName="attendance_unit_id">
+                      <option value="00">Selecione uma Unidade</option>
+                      <option value="01">Pinheiros</option>
+                      <option value="02">Cardeal Arcoverde</option>
+                      <option value="03">Maestro Cardim</option>
+                      <option value="04">Pamplona</option>
+                      <option value="05">Veiga Filho</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                    <label>Sala</label>
+                    <select class="form-control" formControlName="attendance_office_id">
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                    </select>
+                  </div>
+                </div>
               </div>             
               <div class="col-lg-2 col-md-2">
                 <label>Valor/Hora</label>

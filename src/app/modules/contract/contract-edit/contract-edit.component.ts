@@ -3,7 +3,10 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BaseFormComponent } from 'src/app/shared/components/base-form/base-form.component';
+import { City } from 'src/app/shared/models/city';
+import { State } from 'src/app/shared/models/state';
 import { FormValidations } from 'src/app/shared/validators/form-validator';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-contract-edit',
@@ -21,6 +24,8 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   end_time_at: NgbTimeStruct = {hour: 9, minute: 30, second: 0};
   hourStep = 1;
   minuteStep = 30;
+  states: State[];
+  cities: City[];
 
   data = {
     name: "",
@@ -85,6 +90,7 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ngxService: NgxUiLoaderService,
+    private settingsService: SettingsService
     ) {
       super();
    }
@@ -96,6 +102,10 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
         getCheckedRadio = o.value;
     });
 
+    this.settingsService.getStates().subscribe(states => {
+     this.states = states
+   });  
+
     this.formulario = this.fb.group({
       name: ['',  [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       email: ['', [Validators.required, Validators.email]],
@@ -106,8 +116,8 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
       number: ['', Validators.required],
       complement: [''],
       neighborhood: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
+      city_id: ['', Validators.required],
+      state_id: ['', Validators.required],
       start_at: ['', Validators.required],
       end_at: ['', Validators.required],
       due_at: ['', Validators.required],
@@ -249,8 +259,8 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
         attendance_starts_at: [f.attendance_starts_at,  Validators.required],
         attendance_ends_at: [f.attendance_ends_at, Validators.required],
         attendance_days: [f.attendance_days, Validators.required],
-        attendance_unit: [f.attendance_unit,  Validators.required],
-        attendance_office: [f.attendance_office,  Validators.required],
+        attendance_unit_id: [f.attendance_unit,  Validators.required],
+        attendance_office_id: [f.attendance_office,  Validators.required],
         attendance_value: [f.attendance_value, Validators.required],
         attendance_time_start: [f.attendance_time_start,  Validators.required],
         attendance_time_and: [f.attendance_time_and,  Validators.required]
@@ -260,7 +270,7 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
 
   onChange(name: string, isChecked: any, index: number) {
     let controlDays = <FormArray>this.formulario.controls.attendances.get('attendance_days')
-
+    debugger;
     if (isChecked) {
      controlDays.push(this.fb.group({
        day: name
@@ -273,5 +283,11 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
 
   openModal(){
     this.openModalAttendance.open('')
+  }
+
+  onChangeState(event: any) {
+    this.settingsService.getCities(event.value).subscribe(cities => {
+      this.cities = cities
+    })
   }
 }

@@ -146,7 +146,7 @@
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "http://localhost:4200"
       },
-      "file": "data/companies-response.json"
+      "file": "data/cities-response.json"
      }
    }
 ]
