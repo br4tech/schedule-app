@@ -1,7 +1,7 @@
 <div class="aside aside-left d-flex aside-fixed">
   <div class="aside-primary d-flex flex-column align-items-center flex-row-auto">
     <div class="aside-brand d-flex flex-column align-items-center flex-column-auto py-5 py-lg-12">
-      <a href="/metronic/demo3/index.html">
+      <a (click)="showMenu()">
         <img alt="Logo" src="../../../../assets/images/logo.png" class="max-h-45px">
       </a>
     </div>
@@ -51,9 +51,9 @@
       </ul>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto py-4 py-lg-10">
-      <span class="aside-toggle btn btn-icon btn-primary btn-hover-primary shadow-sm">
+      <!-- <a (click)="showMenu()" class="aside-toggle btn btn-icon btn-primary btn-hover-primary shadow-sm" >
         <i class="fa fa-arrow-left"></i>
-      </span>
+      </a> -->
       <a href="#" class="btn btn-icon btn-clean btn-lg mb-1 position-relative">
         <i class="fa fa-bell"></i>
       </a>
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="aside-secondary d-flex flex-row-fluid">
+  <div class="aside-secondary d-flex flex-row-fluid" *ngIf="isCollapsed">
     <div class="aside-workspace scroll scroll-push my-2 ps" style="min-height: 800px; overflow: hidden;">
       <div class="tab-content">
         <div class="tab-pane p-2 fade show active">

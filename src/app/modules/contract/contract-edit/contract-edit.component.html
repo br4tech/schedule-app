@@ -121,7 +121,8 @@
               <div class="col-lg-2 col-md-2">  
                 <label>Dt. Nasci.</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="doctor_birthday" ngbDatepicker #dtBirthday="ngbDatepicker">
+                  <input class="form-control" formControlName="doctor_birthday" 
+                  ngbDatepicker #dtBirthday="ngbDatepicker" (ngModelChange)="selectDate($event, 0)">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtBirthday.toggle()" type="button">
                       <i class="fa fa-calendar"></i>
@@ -187,7 +188,8 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Inicio</label>
           <div class="input-group">
-            <input class="form-control" formControlName="start_at" ngbDatepicker #dtStart="ngbDatepicker">
+            <input class="form-control" formControlName="start_at" 
+            ngbDatepicker #dtStart="ngbDatepicker" (ngModelChange)="selectDate($event, 1)">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" (click)="dtStart.toggle()" type="button">
                   <i class="fa fa-calendar"></i>
@@ -198,7 +200,8 @@
         <div class="col-lg-2 col-md-2">
           <label>Dat. Término</label>
           <div class="input-group">
-            <input class="form-control" formControlName="end_at" ngbDatepicker #dtFinish="ngbDatepicker">
+            <input class="form-control" formControlName="end_at"
+            ngbDatepicker #dtFinish="ngbDatepicker" (ngModelChange)="selectDate($event, 2)">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" (click)="dtFinish.toggle()" type="button">
                   <i class="fa fa-calendar"></i>
@@ -285,7 +288,8 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Inicio</label>
                  <div class="input-group">
-                  <input class="form-control" formControlName="discount_starts_at" ngbDatepicker #dtDescStart="ngbDatepicker">
+                  <input class="form-control" formControlName="discount_starts_at" 
+                  ngbDatepicker #dtDescStart="ngbDatepicker" (ngModelChange)="selectDate($event, 3)">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtDescStart.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -296,7 +300,8 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="discount_ends_at" ngbDatepicker #dtDescAnd="ngbDatepicker">
+                  <input class="form-control" formControlName="discount_ends_at" 
+                  ngbDatepicker #dtDescAnd="ngbDatepicker" (ngModelChange)="selectDate($event, 4)">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtDescAnd.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -358,7 +363,8 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. Inicio</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="attendance_starts_at" ngbDatepicker #dtAttStatr="ngbDatepicker">
+                  <input class="form-control" formControlName="attendance_starts_at" ngbDatepicker 
+                  #dtAttStatr="ngbDatepicker" (ngModelChange)="selectDate($event, 5)">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtAttStatr.toggle()" type="button">
                         <i class="fa fa-calendar"></i>
@@ -369,7 +375,8 @@
               <div class="col-lg-2 col-md-2">
                 <label>Dat. de Término</label>
                 <div class="input-group">
-                  <input class="form-control" formControlName="attendance_ends_at" ngbDatepicker #dtAttEnd="ngbDatepicker">
+                  <input class="form-control" formControlName="attendance_ends_at" ngbDatepicker 
+                  #dtAttEnd="ngbDatepicker" (ngModelChange)="selectDate($event, 6)">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" (click)="dtAttEnd.toggle()" type="button">
                         <i class="fa fa-calendar"></i>

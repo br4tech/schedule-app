@@ -17,6 +17,7 @@ import { Office } from '../../models/office';
 export class AsideComponent implements OnInit {
   offices:  Office[];
   contracts: Contract[];
+  isCollapsed: Boolean = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -39,5 +40,9 @@ export class AsideComponent implements OnInit {
 
   reservationWithOutContract(){
     this.modalService.openReservationWithOutContract(this.offices)
+  }
+
+  showMenu(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }

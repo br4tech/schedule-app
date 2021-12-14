@@ -290,4 +290,25 @@ export class ContractEditComponent extends BaseFormComponent implements OnInit {
       this.cities = cities
     })
   }
+
+  selectDate(event: any, kind: number) {
+    debugger
+    switch(kind){
+      case  DateTypeEnum.DoctorBirthDay: 
+        break;
+      case DateTypeEnum.ContractStartAt: 
+        break;
+      case DateTypeEnum.ContractEndAt:
+        break;
+      case DateTypeEnum.DiscountStartAt:
+        break;
+      case DateTypeEnum.DiscountEndAt :
+        break;
+      case DateTypeEnum.AttendanceStartAt:
+        break;
+      case DateTypeEnum.AttendanceEndAt:
+        break
+    }
+
+  }
 }
